@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hindi Master Test Series | ExamPremium</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4a148c;
+      --primary-light: #7c43bd;
+      --secondary: #7b1fa2;
+      --accent: #e91e63;
+      --accent-light: #ff6090;
+      --light: #f3e5f5;
+      --dark: #12005e;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --text: #333;
+      --text-light: #666;
+      --white: #fff;
+      --off-white: #f8f9fa;
+      --gray: #6c757d;
+      --gold: #ffd700;
+      --silver: #c0c0c0;
+      --bronze: #cd7f32;
+      --card-bg: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --shadow-hover: 0 15px 35px rgba(0,0,0,0.12);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header-scrolled {
+      padding: 10px 0;
+      background: rgba(74, 20, 140, 0.98);
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(to right, #fff, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+    
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 8px 12px;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s;
+      transform: translateX(-50%);
+    }
+    
+    .nav-menu a:hover::after {
+      width: 80%;
+    }
+    
+    .nav-menu a:hover {
+      color: var(--accent-light);
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 15px;
+    }
+    
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background-color: #c2185b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(74, 20, 140, 0.9), rgba(123, 31, 162, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      color: white;
+      margin-bottom: 60px;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 0 auto;
+      animation: fadeIn 1s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero h2 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 35px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 60px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #ffd700, #ff8a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    /* Hindi Master Test Series Intro Section */
+    .hindi-master-intro {
+      padding: 80px 0;
+      background: white;
+      margin-bottom: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .hindi-master-intro-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    
+    .hindi-master-intro-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .hindi-master-intro-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .hindi-master-intro-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+    
+    .hindi-master-intro-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .hindi-master-intro h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+    
+    .hindi-master-intro p {
+      margin-bottom: 25px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    
+    .hindi-master-features {
+      list-style: none;
+      margin: 25px 0;
+    }
+    
+    .hindi-master-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    
+    .hindi-master-features i {
+      color: var(--success);
+      font-size: 18px;
+      width: 25px;
+    }
+    
+    /* Test Series Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 18px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      border-radius: 2px;
+    }
+    
+    .test-series-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .test-tab {
+      padding: 12px 25px;
+      background: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: var(--shadow);
+    }
+    
+    .test-tab.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 5px 15px rgba(74, 20, 140, 0.3);
+    }
+    
+    .test-tab:hover:not(.active) {
+      background: var(--light);
+    }
+    
+    .test-series-content {
+      display: none;
+    }
+    
+    .test-series-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .test-series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .test-series-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    
+    .test-series-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .card-header {
+      padding: 25px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      position: relative;
+    }
+    
+    .card-badge {
+      position: absolute;
+      top: +5px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    .card-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .card-subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .card-body {
+      padding: 25px;
+    }
+    
+    .card-features {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+    
+    .card-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    
+    .card-features i {
+      color: var(--success);
+      font-size: 16px;
+    }
+    
+    .card-footer {
+      padding: 20px 25px;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #eee;
+    }
+    
+    .price {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 20px;
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: var(--gray);
+      font-size: 16px;
+      margin-left: 8px;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 80px 0;
+      background: white;
+      margin-bottom: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 35px 25px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--off-white);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 32px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(74, 20, 140, 0.2);
+    }
+    
+    .feature-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--light) 0%, #e4e8f0 100%);
+      margin-bottom: 60px;
+      border-radius: 20px;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.3s;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .testimonial-text {
+      margin-bottom: 25px;
+      font-style: italic;
+      line-height: 1.8;
+      position: relative;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      flex-shrink: 0;
+    }
+    
+    .author-details h4 {
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    
+    .author-details p {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    
+    .quote-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 45px;
+      color: var(--light);
+      opacity: 0.5;
+    }
+    
+    .rating {
+      color: var(--gold);
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    
+    /* FAQ Section */
+    .faq {
+      padding: 80px 0;
+      background: white;
+      margin-bottom: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .accordion-item {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .accordion-header {
+      background: var(--off-white);
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    
+    .accordion-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .accordion-content.active {
+      padding: 20px;
+      max-height: 300px;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      color: white;
+      padding: 60px 0 20px;
+      border-radius: 20px 20px 0 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    
+    .footer-links i {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+      z-index: 999;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: #c2185b;
+      transform: translateY(-3px);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 100px 30px 30px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+      
+      .nav-menu.active {
+        right: 0;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .auth-buttons {
+        display: none;
+      }
+      
+      .mobile-auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+      }
+      
+      .hindi-master-intro-content {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .test-series-grid,
+      .features-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        gap: 25px;
+      }
+      
+      .stat-item {
+        flex: 1 0 40%;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .test-series-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .test-tab {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        padding: 60px 0;
+      }
+      
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .card-title {
+        font-size: 1.3rem;
+      }
+      
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+      }
+      
+      .hindi-master-intro h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h1>ExamPremium</h1>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Test Series</a></li>
+          <li><a href="#">Free Tests</a></li>
+          <li><a href="#">Results</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+
+        <!-- Desktop Auth Buttons -->
+        <div class="auth-buttons">
+          <button class="btn btn-outline" onclick="location.href='login.html'">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+          <button class="btn btn-primary">
+            <i class="fas fa-user-plus"></i> Register
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Hindi Master Test Series - Complete Language Preparation</h2>
+        <p>Comprehensive Hindi test series covering all topics from grammar to literature. Master the Hindi language with our topic-wise tests and detailed solutions.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">
+            <i class="fas fa-rocket"></i> Explore Hindi Tests
+          </button>
+          <button class="btn btn-outline">
+            <i class="fas fa-book-open"></i> Free Demo Test
+          </button>
+        </div>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-number">800+</div>
+            <div class="stat-label">Successful Candidates</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1500+</div>
+            <div class="stat-label">Practice Questions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">96%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Doubt Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hindi Master Test Series Intro -->
+  <section class="hindi-master-intro">
+    <div class="container">
+      <div class="hindi-master-intro-content">
+        <div class="hindi-master-intro-text">
+          <h2>Hindi Master Test Series 2023</h2>
+          <p>Our comprehensive Hindi test series covers all aspects of the language including grammar, vocabulary, comprehension, and literature. Each test is designed to strengthen your command over Hindi and prepare you for various competitive examinations.</p>
+          
+          <ul class="hindi-master-features">
+            <li><i class="fas fa-check-circle"></i> Topic-wise tests covering all aspects of Hindi</li>
+            <li><i class="fas fa-check-circle"></i> Detailed solutions and explanations</li>
+            <li><i class="fas fa-check-circle"></i> Performance analysis with All India Rank</li>
+            <li><i class="fas fa-check-circle"></i> Based on latest exam patterns</li>
+            <li><i class="fas fa-check-circle"></i> Accessible on mobile, tablet and desktop</li>
+          </ul>
+          
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> Enroll Now at ₹49 Only
+          </button>
+        </div>
+        
+        <div class="hindi-master-intro-image">
+          <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hindi Master Test Series">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hindi Master Test Series Section -->
+  <section class="container">
+    <h2 class="section-title">Hindi Master Test Series</h2>
+    
+    <div class="test-series-tabs">
+      <button class="test-tab active" data-tab="grammar-tests">Grammar Tests</button>
+      <button class="test-tab" data-tab="vocabulary-tests">Vocabulary Tests</button>
+      <button class="test-tab" data-tab="comprehension-tests">Comprehension Tests</button>
+      <button class="test-tab" data-tab="literature-tests">Literature Tests</button>
+      <button class="test-tab" data-tab="full-tests">Full Tests</button>
+    </div>
+    
+    <!-- Grammar Tests -->
+    <div class="test-series-content active" id="grammar-tests">
+      <div class="test-series-grid">
+        <!-- Grammar Test 01 -->
+        <div class="test-series-card">
+          <div class="card-header">
+            <span class="card-badge">New</span>
+            <h3 class="card-title">Hindi Grammar Test 01</h3>
+            <p class="card-subtitle">व्याकरण - क्रिया, काल, वाच्य</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 50 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 60 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Verbs & Tenses Focus</li>
+              <li><i class="fas fa-check-circle"></i> Voice & Speech</li>
+              <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">Free</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-grammar-01.html'">Start Test</button>
+          </div>
+        </div>
+        
+        <!-- Grammar Test 02 -->
+        <div class="test-series-card">
+          <div class="card-header">
+           <span class="card-badge">Popular</span>
+            <h3 class="card-title">Hindi Grammar Test 02</h3>
+            <p class="card-subtitle">व्याकरण - संज्ञा, सर्वनाम, विशेषण</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 60 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 75 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Nouns & Pronouns</li>
+              <li><i class="fas fa-check-circle"></i> Adjectives & Adverbs</li>
+              <li><i class="fas fa-check-circle"></i> Performance Analytics</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">₹9</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-grammar-02.html'">Start Test</button>
+          </div>
+        </div>
+        
+        <!-- Grammar Test 03 -->
+        <div class="test-series-card">
+          <div class="card-header">
+           <span class="card-badge">New</span>
+            <h3 class="card-title">Hindi Grammar Test 03</h3>
+            <p class="card-subtitle">व्याकरण - समास, संधि, उपसर्ग-प्रत्यय</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 55 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 70 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Compound Words</li>
+              <li><i class="fas fa-check-circle"></i> Prefixes & Suffixes</li>
+              <li><i class="fas fa-check-circle"></i> Word Formation</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">₹9</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-grammar-03.html'">Start Test</button>
+          </div>
+        </div>
+        
+        <!-- Grammar Test 04 -->
+        <div class="test-series-card">
+          <div class="card-header">
+           <span class="card-badge">Advanced</span>
+            <h3 class="card-title">Hindi Grammar Test 04</h3>
+            <p class="card-subtitle">व्याकरण - विराम चिह्न, मुहावरे, लोकोक्तियाँ</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 70 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Punctuation</li>
+              <li><i class="fas fa-check-circle"></i> Idioms & Proverbs</li>
+              <li><i class="fas fa-check-circle"></i> Detailed Explanations</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">₹9</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-grammar-04.html'">Start Test</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Vocabulary Tests -->
+    <div class="test-series-content" id="vocabulary-tests">
+      <div class="test-series-grid">
+        <!-- Vocabulary Test 01 -->
+        <div class="test-series-card">
+          <div class="card-header">
+            <span class="card-badge">New</span>
+            <h3 class="card-title">Hindi Vocabulary Test 01</h3>
+            <p class="card-subtitle">शब्द भंडार - पर्यायवाची, विलोम शब्द</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 50 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 60 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Synonyms</li>
+              <li><i class="fas fa-check-circle"></i> Antonyms</li>
+              <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">Free</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-vocabulary-01.html'">Start Test</button>
+          </div>
+        </div>
+        
+        <!-- Vocabulary Test 02 -->
+        <div class="test-series-card">
+          <div class="card-header">
+           <span class="card-badge">Popular</span>
+            <h3 class="card-title">Hindi Vocabulary Test 02</h3>
+            <p class="card-subtitle">शब्द भंडार - अनेकार्थी शब्द, समानार्थी शब्द</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 60 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 75 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Homonyms</li>
+              <li><i class="fas fa-check-circle"></i> Similar Words</li>
+              <li><i class="fas fa-check-circle"></i> Performance Analytics</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">₹9</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-vocabulary-02.html'">Start Test</button>
+          </div>
+        </div>
+        
+        <!-- Vocabulary Test 03 -->
+        <div class="test-series-card">
+          <div class="card-header">
+           <span class="card-badge">New</span>
+            <h3 class="card-title">Hindi Vocabulary Test 03</h3>
+            <p class="card-subtitle">शब्द भंडार - वाक्यांश के लिए शब्द, शब्द युग्म</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 55 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 70 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> One Word Substitution</li>
+              <li><i class="fas fa-check-circle"></i> Word Pairs</li>
+              <li><i class="fas fa-check-circle"></i> Vocabulary Building</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">₹9</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-vocabulary-03.html'">Start Test</button>
+          </div>
+        </div>
+        
+        <!-- Vocabulary Test 04 -->
+        <div class="test-series-card">
+          <div class="card-header">
+           <span class="card-badge">Advanced</span>
+            <h3 class="card-title">Hindi Vocabulary Test 04</h3>
+            <p class="card-subtitle">शब्द भंडार - तत्सम-तद्भव, देशज-विदेशज शब्द</p>
+          </div>
+          <div class="card-body">
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle"></i> 70 Questions</li>
+              <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+              <li><i class="fas fa-check-circle"></i> Word Origins</li>
+              <li><i class="fas fa-check-circle"></i> Loan Words</li>
+              <li><i class="fas fa-check-circle"></i> Detailed Explanations</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="price">₹9</div>
+            <button class="btn btn-primary" onclick="window.location.href='hindi-vocabulary-04.html'">Start Test</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Other test sections would be here -->
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose Hindi Master Test Series?</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3 class="feature-title">Comprehensive Coverage</h3>
+          <p>All Hindi topics covered from grammar to literature with detailed explanations.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">Performance Analytics</h3>
+          <p>Get detailed analysis of your performance with All India Rank and topic-wise breakdown.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="feature-title">Mobile Friendly</h3>
+          <p>Access tests on any device - smartphone, tablet, or desktop with responsive design.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="feature-title">Flexible Timing</h3>
+          <p>Take tests anytime as per your convenience with no fixed schedule restrictions.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="feature-title">Expert Guidance</h3>
+          <p>Learn from Hindi language experts with years of teaching and examination experience.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-rupee-sign"></i>
+          </div>
+          <h3 class="feature-title">Affordable Pricing</h3>
+          <p>High-quality test series at an affordable price to make quality education accessible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Students Say</h2>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <p class="testimonial-text">The Hindi Master Test Series helped me immensely in my preparation. The topic-wise tests are excellent for focused practice and the detailed solutions improved my understanding.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-details">
+              <h4>Rajesh Kumar</h4>
+              <p>SSC CGL 2022 Topper</p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <p class="testimonial-text">The vocabulary tests are fantastic! I improved my Hindi score by 25% after practicing with these tests. The performance analytics helped me identify my weak areas.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-details">
+              <h4>Priya Sharma</h4>
+              <p>Bank PO Aspirant</p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <p class="testimonial-text">As someone who struggled with Hindi grammar, these tests were a game-changer for me. The explanations are clear and the tests are designed perfectly for gradual learning.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-details">
+              <h4>Amit Verma</h4>
+              <p>UPSC Aspirant</p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            How can I access the Hindi Master Test Series? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            After registration and payment, you will get immediate access to all tests in the series. You can access them from your student dashboard on our website or mobile app.
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Are solutions provided for the test questions? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            Yes, detailed solutions with explanations are provided for all questions in the test series. This helps you understand the concepts and improve your performance.
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Is there any time limit for completing the tests? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            Each test has a time limit as specified. However, you can take the tests at your convenience within your subscription period, which is typically 6 months from the date of purchase.
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Can I take the tests on my mobile phone? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            Absolutely! Our platform is fully responsive and works seamlessly on mobile phones, tablets, and desktops. You can even download our mobile app for a better experience.
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            What if I face technical issues during a test? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            We have a dedicated support team available 24/7 to assist you with any technical issues. You can reach out via chat, email, or phone, and we'll resolve your problem promptly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>ExamPremium</h3>
+          <p>Your one-stop destination for quality test series and exam preparation resources. We are committed to helping you achieve your dreams.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Test Series</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Free Resources</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Popular Tests</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> SSC CGL Test Series</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Bank PO Test Series</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> UPSC Prelims Test Series</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Railway Group D Tests</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Teaching Aptitude Tests</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Education Street, Learning City</a></li>
+            <li><a href="#"><i class="fas fa-phone"></i> +91 9876543210</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> info@exampremium.com</a></li>
+            <li><a href="#"><i class="fas fa-globe"></i> www.exampremium.com</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 ExamPremium. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for students</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Test Series Tabs
+    const testTabs = document.querySelectorAll('.test-tab');
+    const testContents = document.querySelectorAll('.test-series-content');
+    
+    testTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        testTabs.forEach(t => t.classList.remove('active'));
+        testContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+    
+    // Accordion Functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.classList.toggle('active');
+        
+        const icon = header.querySelector('i');
+        icon.className = content.classList.contains('active') ? 
+          'fas fa-chevron-up' : 'fas fa-chevron-down';
+      });
+    });
+    
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
