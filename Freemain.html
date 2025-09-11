@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Test Series - ExamPremium</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4a148c;
+      --primary-light: #7c43bd;
+      --secondary: #7b1fa2;
+      --accent: #e91e63;
+      --accent-light: #ff6090;
+      --light: #f3e5f5;
+      --dark: #12005e;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --text: #333;
+      --text-light: #666;
+      --white: #fff;
+      --off-white: #f8f9fa;
+      --gray: #6c757d;
+      --gold: #ffd700;
+      --silver: #c0c0c0;
+      --bronze: #cd7f32;
+      --card-bg: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --shadow-hover: 0 15px 35px rgba(0,0,0,0.12);
+      --free: #4caf50;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header-scrolled {
+      padding: 10px 0;
+      background: rgba(74, 20, 140, 0.98);
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(to right, #fff, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+    
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 8px 12px;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s;
+      transform: translateX(-50%);
+    }
+    
+    .nav-menu a:hover::after {
+      width: 80%;
+    }
+    
+    .nav-menu a:hover {
+      color: var(--accent-light);
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 15px;
+    }
+    
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background-color: #c2185b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+    }
+    
+    .btn-free {
+      background-color: var(--free);
+      color: white;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+    
+    .btn-free:hover {
+      background-color: #388e3c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(74, 20, 140, 0.9), rgba(123, 31, 162, 0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      color: white;
+      margin-bottom: 60px;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 0 auto;
+      animation: fadeIn 1s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero h2 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 35px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 60px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #ffd700, #ff8a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    /* Exam Categories Section */
+    .categories-section {
+      padding: 20px 0 40px;
+    }
+    
+    .categories-container {
+      position: relative;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    
+    .categories-title {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--primary);
+      font-size: 28px;
+    }
+    
+    .categories-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 15px;
+      padding: 15px 5px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .categories-scroll::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+    
+    .category-item {
+      flex: 0 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 15px 25px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+      min-width: 160px;
+    }
+    
+    .category-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .category-item.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .category-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    
+    .category-item.active .category-icon {
+      color: white;
+    }
+    
+    .category-name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    .scroll-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      z-index: 10;
+      transition: all 0.3s;
+    }
+    
+    .scroll-arrow:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .scroll-arrow.left {
+      left: -20px;
+    }
+    
+    .scroll-arrow.right {
+      right: -20px;
+    }
+    
+    /* Test Series Grid */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 18px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      border-radius: 2px;
+    }
+    
+    .test-series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .test-series-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    
+    .test-series-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .card-header {
+      padding: 25px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      position: relative;
+    }
+    
+    .card-badge {
+      position: absolute;
+      top: +5px;
+      right: 20px;
+      background: var(--free);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    .card-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .card-subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .card-body {
+      padding: 25px;
+    }
+    
+    .card-features {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+    
+    .card-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    
+    .card-features i {
+      color: var(--success);
+      font-size: 16px;
+    }
+    
+    .card-footer {
+      padding: 20px 25px;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #eee;
+    }
+    
+    .price {
+      font-weight: 700;
+      color: var(--free);
+      font-size: 20px;
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: var(--gray);
+      font-size: 16px;
+      margin-left: 8px;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 80px 0;
+      background: white;
+      margin-bottom: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 35px 25px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--off-white);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 32px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(74, 20, 140, 0.2);
+    }
+    
+    .feature-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--light) 0%, #e4e8f0 100%);
+      margin-bottom: 60px;
+      border-radius: 20px;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.3s;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .testimonial-text {
+      margin-bottom: 25px;
+      font-style: italic;
+      line-height: 1.8;
+      position: relative;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      flex-shrink: 0;
+    }
+    
+    .author-details h4 {
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    
+    .author-details p {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    
+    .quote-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 45px;
+      color: var(--light);
+      opacity: 0.5;
+    }
+    
+    .rating {
+      color: var(--gold);
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    
+    /* FAQ Section */
+    .faq {
+      padding: 80px 0;
+      background: white;
+      margin-bottom: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .accordion-item {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .accordion-header {
+      background: var(--off-white);
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    
+    .accordion-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .accordion-content.active {
+      padding: 20px;
+      max-height: 300px;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      color: white;
+      padding: 60px 0 20px;
+      border-radius: 20px 20px 0 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    
+    .footer-links i {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+      z-index: 999;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: #c2185b;
+      transform: translateY(-3px);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 1200px) {
+      .scroll-arrow.left {
+        left: 10px;
+      }
+      
+      .scroll-arrow.right {
+        right: 10px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 100px 30px 30px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+      
+      .nav-menu.active {
+        right: 0;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .auth-buttons {
+        display: none;
+      }
+      
+      .mobile-auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+      }
+      
+      .scroll-arrow {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .test-series-grid,
+      .features-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        gap: 25px;
+      }
+      
+      .stat-item {
+        flex: 1 0 40%;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .category-item {
+        min-width: 140px;
+        padding: 12px 20px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        padding: 60px 0;
+      }
+      
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .card-title {
+        font-size: 1.3rem;
+      }
+      
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+      }
+      
+      .categories-title {
+        font-size: 24px;
+      }
+      
+      .category-item {
+        min-width: 120px;
+        padding: 10px 15px;
+      }
+      
+      .category-icon {
+        font-size: 24px;
+      }
+      
+      .category-name {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<header id="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h1>ExamPremium</h1>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Test Series</a></li>
+        <li><a href="#" style="color: var(--accent-light);">Free Tests</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Desktop Auth Buttons -->
+      <div class="auth-buttons">
+        <button class="btn btn-outline" onclick="location.href='Final Minor Test - 01 Final.html'">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+        <button class="btn btn-primary">
+          <i class="fas fa-user-plus"></i> Register
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Free Test Series for Your Success</h2>
+        <p>Access high-quality free test series designed by experts to help you crack your dream exams. Practice with detailed solutions and performance analytics at no cost.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-free">
+            <i class="fas fa-rocket"></i> Explore Free Tests
+          </button>
+          <button class="btn btn-outline">
+            <i class="fas fa-crown"></i> Premium Tests
+          </button>
+        </div>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-number">50,000+</div>
+            <div class="stat-label">Free Tests Taken</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Free Test Series</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Access</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exam Categories Section -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="categories-title">Browse By Exam Category</h2>
+      <div class="categories-container">
+        <div class="scroll-arrow left" id="scrollLeft">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="categories-scroll" id="categoriesScroll">
+          <div class="category-item active" data-category="all">
+            <div class="category-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="category-name">All Exams</div>
+          </div>
+          <div class="category-item" data-category="ssc">
+            <div class="category-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="category-name">SSC Exams</div>
+          </div>
+          <div class="category-item" data-category="bihar">
+            <div class="category-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <div class="category-name">Bihar Exams</div>
+          </div>
+          <div class="category-item" data-category="rajasthan">
+            <div class="category-icon">
+              <i class="fas fa-fort-awesome"></i>
+            </div>
+            <div class="category-name">Rajasthan Exams</div>
+          </div>
+          <div class="category-item" data-category="banking">
+            <div class="category-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="category-name">Banking Exams</div>
+          </div>
+          <div class="category-item" data-category="teaching">
+            <div class="category-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="category-name">Teaching Exams</div>
+          </div>
+          <div class="category-item" data-category="defense">
+            <div class="category-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="category-name">Defense Exams</div>
+          </div>
+          <div class="category-item" data-category="current-affairs">
+            <div class="category-icon">
+              <i class="fas fa-newspaper"></i>
+            </div>
+            <div class="category-name">Current Affairs</div>
+          </div>
+          <div class="category-item" data-category="police">
+            <div class="category-icon">
+              <i class="fas fa-handcuffs"></i>
+            </div>
+            <div class="category-name">Police Exams</div>
+          </div>
+          <div class="category-item" data-category="state">
+            <div class="category-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="category-name">State Level Exams</div>
+          </div>
+        </div>
+        <div class="scroll-arrow right" id="scrollRight">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test Series Section -->
+  <section class="container">
+    <h2 class="section-title">Our Free Test Series</h2>
+    
+    <div class="test-series-grid" id="testSeriesGrid">
+      <!-- SSC GD Tests -->
+      <div class="test-series-card" data-category="ssc">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">SSC GD Test 1</h3>
+          <p class="card-subtitle">General Duty Constable Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bilingual (Hindi & English)</li>
+            <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            <li><i class="fas fa-check-circle"></i> All India Ranking</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹199</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="ssc">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">SSC GD Test 2</h3>
+          <p class="card-subtitle">General Duty Constable Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bilingual (Hindi & English)</li>
+            <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            <li><i class="fas fa-check-circle"></i> All India Ranking</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹199</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="ssc">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">SSC GD Test 3</h3>
+          <p class="card-subtitle">General Duty Constable Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bilingual (Hindi & English)</li>
+            <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            <li><i class="fas fa-check-circle"></i> All India Ranking</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹199</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="ssc">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">SSC GD Test 4</h3>
+          <p class="card-subtitle">General Duty Constable Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bilingual (Hindi & English)</li>
+            <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            <li><i class="fas fa-check-circle"></i> All India Ranking</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹199</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <!-- Rajasthan Patwari Tests -->
+      <div class="test-series-card" data-category="rajasthan">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Rajasthan Patwari Test 1</h3>
+          <p class="card-subtitle">Revenue Department Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 150 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 120 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Hindi Language</li>
+            <li><i class="fas fa-check-circle"></i> Rajasthan GK Focus</li>
+            <li><i class="fas fa-check-circle"></i> Mathematics Practice</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹299</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="rajasthan">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Rajasthan Patwari Test 2</h3>
+          <p class="card-subtitle">Revenue Department Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 150 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 120 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Hindi Language</li>
+            <li><i class="fas fa-check-circle"></i> Rajasthan GK Focus</li>
+            <li><i class="fas fa-check-circle"></i> Mathematics Practice</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹299</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <!-- SSC MTS Tests -->
+      <div class="test-series-card" data-category="ssc">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">SSC MTS Test 1</h3>
+          <p class="card-subtitle">Multi-Tasking Staff Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bilingual (Hindi & English)</li>
+            <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            <li><i class="fas fa-check-circle"></i> Previous Year Pattern</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹249</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="ssc">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">SSC MTS Test 2</h3>
+          <p class="card-subtitle">Multi-Tasking Staff Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bilingual (Hindi & English)</li>
+            <li><i class="fas fa-check-circle"></i> Detailed Solutions</li>
+            <li><i class="fas fa-check-circle"></i> Previous Year Pattern</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹249</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <!-- BSF Tradesmen Tests -->
+      <div class="test-series-card" data-category="defense">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">BSF Tradesmen Test 1</h3>
+          <p class="card-subtitle">Border Security Force Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Technical Questions</li>
+            <li><i class="fas fa-check-circle"></i> Trade Specific</li>
+            <li><i class="fas fa-check-circle"></i> Physical Standards Info</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹349</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="defense">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">BSF Tradesmen Test 2</h3>
+          <p class="card-subtitle">Border Security Force Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Technical Questions</li>
+            <li><i class="fas fa-check-circle"></i> Trade Specific</li>
+            <li><i class="fas fa-check-circle"></i> Physical Standards Info</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹349</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <!-- Bihar Police Tests -->
+      <div class="test-series-card" data-category="bihar">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Bihar Police SI Test 1</h3>
+          <p class="card-subtitle">Sub-Inspector Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 150 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 120 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bihar GK Focus</li>
+            <li><i class="fas fa-check-circle"></i> Reasoning Practice</li>
+            <li><i class="fas fa-check-circle"></i> Previous Year Questions</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹299</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="bihar">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Bihar Police Constable Test 1</h3>
+          <p class="card-subtitle">Constable Practice Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Bihar GK Focus</li>
+            <li><i class="fas fa-check-circle"></i> Physical Efficiency Tips</li>
+            <li><i class="fas fa-check-circle"></i> Previous Year Pattern</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹249</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <!-- More tests for other categories -->
+      <div class="test-series-card" data-category="banking">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Banking Awareness Test 1</h3>
+          <p class="card-subtitle">IBPS, SBI, RBI Exams Preparation</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 60 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Banking Terminology</li>
+            <li><i class="fas fa-check-circle"></i> Financial Awareness</li>
+            <li><i class="fas fa-check-circle"></i> Economic Survey</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹199</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="teaching">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Teaching Aptitude Test 1</h3>
+          <p class="card-subtitle">CTET, UPTET, REET Preparation</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 150 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 150 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Child Development</li>
+            <li><i class="fas fa-check-circle"></i> Pedagogy Questions</li>
+            <li><i class="fas fa-check-circle"></i> Subject Specific</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹349</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="current-affairs">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Current Affairs Monthly Test</h3>
+          <p class="card-subtitle">October 2023 Current Affairs</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 60 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> National & International</li>
+            <li><i class="fas fa-check-circle"></i> Sports & Awards</li>
+            <li><i class="fas fa-check-circle"></i> PDF Notes Included</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹149</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="police">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">Police Constable Test 1</h3>
+          <p class="card-subtitle">General Police Constable Exam</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 90 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> General Awareness</li>
+            <li><i class="fas fa-check-circle"></i> Reasoning Ability</li>
+            <li><i class="fas fa-check-circle"></i> Numerical Aptitude</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹199</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+      
+      <div class="test-series-card" data-category="state">
+        <div class="card-header">
+          <span class="card-badge">FREE</span>
+          <h3 class="card-title">UPSSSC PET Test 1</h3>
+          <p class="card-subtitle">Preliminary Eligibility Test</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> 100 Questions</li>
+            <li><i class="fas fa-check-circle"></i> 120 Minutes Duration</li>
+            <li><i class="fas fa-check-circle"></i> Hindi Language</li>
+            <li><i class="fas fa-check-circle"></i> Uttar Pradesh GK</li>
+            <li><i class="fas fa-check-circle"></i> General Studies</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">FREE <span class="original-price">₹249</span></div>
+          <button class="btn btn-free">Start Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose Our Free Test Series?</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="feature-title">Performance Analytics</h3>
+          <p>Detailed insights into your strengths and weaknesses with comparative analysis.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="feature-title">Mobile Friendly</h3>
+          <p>Take tests anytime, anywhere on your mobile, tablet or desktop.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3 class="feature-title">Detailed Solutions</h3>
+          <p>Step-by-step explanations for every question to enhance understanding.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="feature-title">Time Management</h3>
+          <p>Practice with timed tests to improve your speed and accuracy.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3 class="feature-title">All India Ranking</h3>
+          <p>Compare your performance with thousands of aspirants across India.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="feature-title">Expert Curated</h3>
+          <p>Tests designed by subject matter experts and experienced educators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Students Say</h2>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <p class="testimonial-text">The free test series helped me crack SSC CGL in my first attempt. The detailed solutions and performance analysis were extremely helpful.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-details">
+              <h4>Rahul Kumar</h4>
+              <p>SSC CGL Topper</p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <p class="testimonial-text">The Bihar GK test series was comprehensive and up-to-date. It covered all important topics and helped me score well in BPSC exams.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-details">
+              <h4>Priya Singh</h4>
+              <p>BPSC Aspirant</p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <p class="testimonial-text">The daily current affairs tests kept me updated with latest events. The monthly compilations were perfect for revision before exams.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="author-details">
+              <h4>Amit Sharma</h4>
+              <p>Banking Aspirant</p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Are these test series completely free? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <p>Yes, all the test series listed on this page are completely free of cost. You can access all features including tests, solutions, and performance analytics without any charges.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Do I need to register to access free tests? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <p>Yes, you need to create a free account to access our test series. Registration helps us save your progress and provide personalized performance analysis.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Are the free tests similar to premium tests? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <p>Our free tests maintain the same quality standard as premium tests. However, premium tests offer more comprehensive coverage, more tests, and additional features like doubt support.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Can I take tests on mobile? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <p>Yes, our platform is fully responsive and works seamlessly on mobile devices, tablets, and desktops. You can take tests anytime, anywhere.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            How often are new tests added? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <p>We regularly update our question bank and add new tests every week. Current affairs tests are updated daily to keep you informed about the latest events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About ExamPremium</h3>
+          <p>We provide high-quality test series and study material to help aspirants crack competitive exams with confidence.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Test Series</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Free Tests</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Popular Exams</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> SSC CGL</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> SSC GD</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Bihar GK</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Banking Exams</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Current Affairs</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> Patna, Bihar 800001</li>
+            <li><i class="fas fa-phone"></i> +91 9876543210</li>
+            <li><i class="fas fa-envelope"></i> info@exampremium.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 6PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 ExamPremium. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Header Scroll Effect
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+    
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Accordion Functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.classList.toggle('active');
+        header.querySelector('i').classList.toggle('fa-chevron-down');
+        header.querySelector('i').classList.toggle('fa-chevron-up');
+      });
+    });
+    
+    // Category Filtering
+    const categoryItems = document.querySelectorAll('.category-item');
+    const testCards = document.querySelectorAll('.test-series-card');
+    
+    categoryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all categories
+        categoryItems.forEach(cat => cat.classList.remove('active'));
+        
+        // Add active class to clicked category
+        item.classList.add('active');
+        
+        const category = item.getAttribute('data-category');
+        
+        // Show/hide tests based on category
+        testCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Horizontal Scrolling for Categories
+    const scrollLeft = document.getElementById('scrollLeft');
+    const scrollRight = document.getElementById('scrollRight');
+    const categoriesScroll = document.getElementById('categoriesScroll');
+    
+    scrollLeft.addEventListener('click', () => {
+      categoriesScroll.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+      });
+    });
+    
+    scrollRight.addEventListener('click', () => {
+      categoriesScroll.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Hide arrows on mobile
+    function checkArrowVisibility() {
+      if (window.innerWidth <= 992) {
+        scrollLeft.style.display = 'none';
+        scrollRight.style.display = 'none';
+      } else {
+        scrollLeft.style.display = 'flex';
+        scrollRight.style.display = 'flex';
+      }
+    }
+    
+    // Initial check
+    checkArrowVisibility();
+    
+    // Check on window resize
+    window.addEventListener('resize', checkArrowVisibility);
+  </script>
+</body>
+</html>
