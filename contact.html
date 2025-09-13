@@ -786,10 +786,10 @@
           <div class="social-links-contact">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/exameseries?igsh=Mmk5dGFyMHJpbWJp"><i class="fab fa-instagram"></i></a>
+			  <a href="https://t.me/exameseries"><i class="fab fa-telegram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+                 </div>
         </div>
         
         <div class="contact-form">
@@ -1022,10 +1022,57 @@
         observer.observe(el);
       });
     });
+
+
+    // ====== IMPORTANT: Replace this with your Apps Script Web App URL ======
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzP9LSh6cm-nLd12EOR8uz-Naa05v3rKLMGH4p-w6qAExrMRtxbv2TQvDrIUJA9OR2q/exec"; // Example: https://script.google.com/macros/s/AKfy.../exec
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const successBox = document.getElementById('successBox');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      // Disable button to prevent double submit
+      submitBtn.disabled = true;
+      btnText.textContent = "Sending...";
+
+      const formData = new FormData(form);
+
+      // fetch to Apps Script WebApp
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        body: formData
+      })
+      .then(response => {
+        // Note: Apps Script usually returns 200 even on text output
+        // Show premium styled success message and reset form
+        form.reset();
+        successBox.style.display = "block";
+        successBox.innerHTML = `
+          🎉 आपका संदेश भेज दिया गया है!<br>
+          हमारी टीम 24-48 घंटे के अंदर संपर्क करेगी। यदि आप चाहें तो हमें ${document.getElementById('email').value} पर follow up कर सकते हैं।
+        `;
+        btnText.textContent = "Send Message";
+        submitBtn.disabled = false;
+      })
+      .catch(err => {
+        console.error(err);
+        successBox.style.display = "block";
+        successBox.innerHTML = "⚠️ कुछ गड़बड़ हुई — कृपया दुबारा कोशिश करें।";
+        btnText.textContent = "Send Message";
+        submitBtn.disabled = false;
+      });
+    });
   </script>
 </body>
 
 </html>
+
 
 
 
