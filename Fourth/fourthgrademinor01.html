@@ -383,6 +383,7 @@
 <!-- Firebase + App Logic -->
 <script type="module">
   const examId = "fourthgrademinor01"; // इस फाइल के लिए
+  const seriesId = "FourthGrade2025"; // हर टेस्ट सीरीज़ में बदलें (FourthGrade2025…)
 /* =======================
    FIREBASE SETUP
    ======================= */
@@ -518,13 +519,21 @@ async function handleUserLogin() {
 
   try {
     const cred = await signInWithEmailAndPassword(auth, email, pass);
-    currentUser = cred.user;
+currentUser = cred.user;
 
-    // Load questions from Firebase
-    await loadQuestionsFromFirebase();
-    
-    // Start live leaderboard subscription right after login
-    subscribeLiveLeaderboard();
+// ✅ Series restriction check
+const permRef = doc(db, 'userSeries', currentUser.uid);
+const permSnap = await getDoc(permRef);
+if (!permSnap.exists() || !(permSnap.data().allowedSeries || []).includes(seriesId)) {
+  alert("You are not allowed to access this test series.");
+  await signOut(auth);
+  return;
+}
+
+// अगर allowed है तभी आगे load होगा
+await loadQuestionsFromFirebase();
+subscribeLiveLeaderboard();
+
 
     // increment per-login attempt counter (users get only 3 full exam attempts; on 4th+ show results only)
     const aRef = doc(db, 'attempts', `${currentUser.uid}_${examId}`);
@@ -1173,4 +1182,5 @@ function hideAll(){
 
 
 </html>
+
 
