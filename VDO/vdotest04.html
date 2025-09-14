@@ -382,6 +382,7 @@
 
 <!-- Firebase + App Logic -->
 <script type="module">
+  const examId = "vdotest04"; // इस फाइल के लिए
 /* =======================
    FIREBASE SETUP
    ======================= */
@@ -526,7 +527,7 @@ async function handleUserLogin() {
     subscribeLiveLeaderboard();
 
     // increment per-login attempt counter (users get only 3 full exam attempts; on 4th+ show results only)
-    const aRef = doc(db, 'attempts', currentUser.uid);
+    const aRef = doc(db, 'attempts', `${currentUser.uid}_${examId}`);
     const snap = await getDoc(aRef);
     if (!snap.exists()) {
       await setDoc(aRef, { count: 1, updatedAt: serverTimestamp() });
@@ -551,8 +552,9 @@ async function handleUserLogin() {
 // Load questions from Firebase
 async function loadQuestionsFromFirebase() {
   try {
-    const questionsRef = doc(db, 'config', 'questions');
-    const questionsSnap = await getDoc(questionsRef);
+    const questionsRef = doc(db, 'config', `questions_${examId}`);
+const questionsSnap = await getDoc(questionsRef);
+
     
     if (questionsSnap.exists()) {
       examQuestions = questionsSnap.data().questions || [];
@@ -758,7 +760,7 @@ function calculateResults(){
 async function saveAttemptAndLeaderboard(name, results, answers){
   if (!currentUser) return;
   // save latest attempt
-  const latestRef = doc(db, 'results', currentUser.uid);
+  const latestRef = doc(db, 'results', `${currentUser.uid}_${examId}`);
   await setDoc(latestRef, {
     name,
     results,
@@ -773,7 +775,7 @@ async function saveAttemptAndLeaderboard(name, results, answers){
   });
 
   // upsert leaderboard (best score)
-  const lbRef = doc(db, 'leaderboard', currentUser.uid);
+ const lbRef = doc(db, 'leaderboard', `${currentUser.uid}_${examId}`);
   const s = await getDoc(lbRef);
   const scoreNum = parseFloat(results.totalScore);
   if (!s.exists() || (s.exists() && scoreNum > (s.data()?.score || 0))) {
@@ -1012,8 +1014,9 @@ async function processUploadedQuestions(data){
     });
     if(newQ.length>0){ 
       // Save to Firebase so all devices get the updated questions
-      const questionsRef = doc(db, 'config', 'questions');
-      await setDoc(questionsRef, { questions: newQ });
+      const questionsRef = doc(db, 'config', `questions_${examId}`);
+const questionsSnap = await getDoc(questionsRef);
+
       
       examQuestions = newQ; 
       renderQuestionsTable(); 
@@ -1170,3 +1173,4 @@ function hideAll(){
 
 
 </html>
+
