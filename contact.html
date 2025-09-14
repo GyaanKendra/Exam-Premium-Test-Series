@@ -983,24 +983,68 @@
     });
     
     // Contact form submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Form validation
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
-      if (name && email && subject && message) {
-        // In a real application, you would send this data to your server
-        alert('Thank you for your message! We will get back to you soon.');
+    // Replace the existing contact form submission block with this (or update it)
+  const contactForm = document.getElementById('contactForm');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !subject || !message) {
+      alert(Please fill in all required fields.');
+      return;
+    }
+    const payload = {
+      name: name,
+      email: email,
+      phone: phone,
+      subject: subject,
+      message: message,
+      source: window.location.pathname || "contact.html"
+    };
+
+    // PUT your deployed Apps Script Web App URL here:
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyQhfoPbEJx7gXjzxsW5T3P-ZnpM4KbVKX2g_f3fuxhCU2ruR7VnuMIQoutz418WZ4S/exec";
+
+    // disable button to prevent double submits (optional)
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    fetch(WEB_APP_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.status === 'success') {
+        // Premium-level message to user (on-site)
+        alert(Thank you for your message! We will get back to you soon.');
         contactForm.reset();
       } else {
-        alert('Please fill in all required fields.');
+        alert('कुछ समस्या आ गई — कृपया बाद में पुनः प्रयास करें।');
+        console.error('Server error:', data);
       }
+    })
+    .catch(err => {
+      console.error('Fetch error:', err);
+      alert('नेटवर्क त्रुटि — कृपया चेक करें और फिर कोशिश करें।');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
     });
+  });
+</script>
+
     
     // Animation on scroll
     document.addEventListener('DOMContentLoaded', function() {
@@ -1026,6 +1070,7 @@
 </body>
 
 </html>
+
 
 
 
