@@ -554,7 +554,6 @@ async function loadQuestionsFromFirebase() {
   try {
     const questionsRef = doc(db, 'config', `questions_${examId}`);
 const questionsSnap = await getDoc(questionsRef);
-
     
     if (questionsSnap.exists()) {
       examQuestions = questionsSnap.data().questions || [];
@@ -775,7 +774,7 @@ async function saveAttemptAndLeaderboard(name, results, answers){
   });
 
   // upsert leaderboard (best score)
- const lbRef = doc(db, 'leaderboard', `${currentUser.uid}_${examId}`);
+  const lbRef = doc(db, 'leaderboard', `${currentUser.uid}_${examId}`);
   const s = await getDoc(lbRef);
   const scoreNum = parseFloat(results.totalScore);
   if (!s.exists() || (s.exists() && scoreNum > (s.data()?.score || 0))) {
@@ -1015,8 +1014,7 @@ async function processUploadedQuestions(data){
     if(newQ.length>0){ 
       // Save to Firebase so all devices get the updated questions
       const questionsRef = doc(db, 'config', `questions_${examId}`);
-const questionsSnap = await getDoc(questionsRef);
-
+await setDoc(questionsRef, { questions: newQ });
       
       examQuestions = newQ; 
       renderQuestionsTable(); 
