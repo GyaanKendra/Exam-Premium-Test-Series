@@ -385,9 +385,9 @@
 /* =======================
    FIREBASE SETUP
    ======================= */
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, increment, serverTimestamp, collection, addDoc, query, orderBy, limit, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+  import { getFirestore, doc, getDoc, setDoc, updateDoc, increment, serverTimestamp, collection, addDoc, query, orderBy, limit, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
 // TODO: Paste your Firebase config keys here (these are public in all web apps)
 // Your web app's Firebase configuration
@@ -458,7 +458,7 @@ const exportJsonBtn = document.getElementById('exportJsonBtn');
    ======================= */
 let examQuestions = [];
 let userAnswers = [];
-let timeLeft = 20*60;
+let timeLeft = 180*60;
 let currentQuestionIndex = 0;
 
 let lastResults = null;
@@ -739,7 +739,7 @@ function calculateResults(){
       if(userAnswers[i]===q.correctAnswer) correct++; else incorrect++;
     }
   });
-  const positiveMarks = correct * 2;
+  const positiveMarks = correct * 1.25;
   const negativeMarks = incorrect * 0.66;
   const totalScore = positiveMarks - negativeMarks;
   return {
@@ -747,8 +747,8 @@ function calculateResults(){
     positiveMarks: positiveMarks.toFixed(2),
     negativeMarks: negativeMarks.toFixed(2),
     totalScore: totalScore.toFixed(2),
-    maxScore: (totalQuestions*2).toFixed(2),
-    percentage: ((totalScore/(totalQuestions*2))*100).toFixed(2),
+    maxScore: (totalQuestions*1.25).toFixed(2),
+    percentage: ((totalScore/(totalQuestions*1.25))*100).toFixed(2),
   };
 }
 
@@ -1167,5 +1167,4 @@ function hideAll(){
 }
 </script>
 </body>
-
 </html>
