@@ -983,66 +983,54 @@
     });
     
     // Contact form submission
-    // Replace the existing contact form submission block with this (or update it)
-  const contactForm = document.getElementById('contactForm');
+  document.addEventListener("DOMContentLoaded", function() {
+  const contactForm = document.getElementById("contactForm");
 
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+  if (!contactForm) {
+    console.error("Form with id=contactForm not found!");
+    return;
+  }
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // 🚫 stop form from reloading
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
 
     if (!name || !email || !subject || !message) {
-      alert(Please fill in all required fields.');
+      alert("कृपया सभी आवश्यक फ़ील्ड भरें।");
       return;
     }
-    const payload = {
-      name: name,
-      email: email,
-      phone: phone,
-      subject: subject,
-      message: message,
-      source: window.location.pathname || "contact.html"
-    };
 
-    // PUT your deployed Apps Script Web App URL here:
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyQhfoPbEJx7gXjzxsW5T3P-ZnpM4KbVKX2g_f3fuxhCU2ruR7VnuMIQoutz418WZ4S/exec";
+    const payload = { name, email, phone, subject, message, source: "contact.html" };
 
-    // disable button to prevent double submits (optional)
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    // ✅ यहां अपना Apps Script Web App URL डालें
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxYourIDHere/exec";
 
     fetch(WEB_APP_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     })
     .then(r => r.json())
     .then(data => {
-      if (data && data.status === 'success') {
-        // Premium-level message to user (on-site)
-        alert(Thank you for your message! We will get back to you soon.');
+      console.log("Server response:", data);
+      if (data.status === "success") {
+        alert("धन्यवाद! आपका संदेश हमें मिल गया है। हम शीघ्र ही आपसे संपर्क करेंगे।");
         contactForm.reset();
       } else {
-        alert('कुछ समस्या आ गई — कृपया बाद में पुनः प्रयास करें।');
-        console.error('Server error:', data);
+        alert("Error: " + (data.message || "कुछ गड़बड़ हुई"));
       }
     })
     .catch(err => {
-      console.error('Fetch error:', err);
-      alert('नेटवर्क त्रुटि — कृपया चेक करें और फिर कोशिश करें।');
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      console.error("Fetch error:", err);
+      alert("नेटवर्क त्रुटि — कृपया बाद में प्रयास करें।");
     });
   });
+});
 
     
     // Animation on scroll
@@ -1069,6 +1057,7 @@
 </body>
 
 </html>
+
 
 
 
