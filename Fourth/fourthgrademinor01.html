@@ -750,7 +750,7 @@ function calculateResults(){
       if(userAnswers[i]===q.correctAnswer) correct++; else incorrect++;
     }
   });
-  const positiveMarks = correct * 1.25;
+  const positiveMarks = correct * 1.666;
   const negativeMarks = incorrect * 0.66;
   const totalScore = positiveMarks - negativeMarks;
   return {
@@ -758,8 +758,8 @@ function calculateResults(){
     positiveMarks: positiveMarks.toFixed(2),
     negativeMarks: negativeMarks.toFixed(2),
     totalScore: totalScore.toFixed(2),
-    maxScore: (totalQuestions*1.25).toFixed(2),
-    percentage: ((totalScore/(totalQuestions*1.25))*100).toFixed(2),
+    maxScore: (totalQuestions*1.666).toFixed(2),
+    percentage: ((totalScore/(totalQuestions*1.666))*100).toFixed(2),
   };
 }
 
@@ -1182,5 +1182,6 @@ function hideAll(){
 
 
 </html>
+
 
 
