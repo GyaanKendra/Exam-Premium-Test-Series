@@ -983,55 +983,24 @@
     });
     
     // Contact form submission
-  document.addEventListener("DOMContentLoaded", function() {
-  const contactForm = document.getElementById("contactForm");
-
-  if (!contactForm) {
-    console.error("Form with id=contactForm not found!");
-    return;
-  }
-
-  contactForm.addEventListener("submit", function(e) {
-    e.preventDefault(); // 🚫 stop form from reloading
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !subject || !message) {
-      alert("कृपया सभी आवश्यक फ़ील्ड भरें।");
-      return;
-    }
-
-    const payload = { name, email, phone, subject, message, source: "contact.html" };
-
-    // ✅ यहां अपना Apps Script Web App URL डालें
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx1EFCcft24ccjGhFjgMUDgG4Zx7-eKDgaDi4j-nXnEBGEo7uPAKZ52lH1zodIy5xxQ/exec";
-
-    fetch(WEB_APP_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    })
-    .then(r => r.json())
-    .then(data => {
-      console.log("Server response:", data);
-      if (data.status === "success") {
-        alert("धन्यवाद! आपका संदेश हमें मिल गया है। हम शीघ्र ही आपसे संपर्क करेंगे।");
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      if (name && email && subject && message) {
+        // In a real application, you would send this data to your server
+        alert('Thank you for your message! We will get back to you soon.');
         contactForm.reset();
       } else {
-        alert("Error: " + (data.message || "कुछ गड़बड़ हुई"));
+        alert('Please fill in all required fields.');
       }
-    })
-    .catch(err => {
-      console.error("Fetch error:", err);
-      alert("नेटवर्क त्रुटि — कृपया बाद में प्रयास करें।");
     });
-  });
-});
-
     
     // Animation on scroll
     document.addEventListener('DOMContentLoaded', function() {
@@ -1057,18 +1026,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
