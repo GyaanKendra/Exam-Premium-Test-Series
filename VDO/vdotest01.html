@@ -522,7 +522,7 @@ async function handleUserLogin() {
     currentUser = cred.user;
 
     // ✅ Series restriction check
-    const permRef = doc(db, 'userSeries', currentUser.uid);
+    const permRef = doc(db, 'vdo_userseries', currentUser.uid);
     const permSnap = await getDoc(permRef);
     if (!permSnap.exists() || !(permSnap.data().allowedSeries || []).includes(seriesId)) {
       alert("You are not allowed to access this test series.");
@@ -1178,5 +1178,6 @@ function hideAll(){
 </script>
 </body>
 </html>
+
 
 
