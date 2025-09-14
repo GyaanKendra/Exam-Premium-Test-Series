@@ -383,6 +383,7 @@
 <!-- Firebase + App Logic -->
 <script type="module">
   const examId = "vdotest02"; // इस फाइल के लिए
+     const seriesId = "vdoSeries2025"; // हर टेस्ट सीरीज़ में बदलें (vdoSeries2025…)
 /* =======================
    FIREBASE SETUP
    ======================= */
@@ -520,11 +521,19 @@ async function handleUserLogin() {
     const cred = await signInWithEmailAndPassword(auth, email, pass);
     currentUser = cred.user;
 
-    // Load questions from Firebase
+    // ✅ Series restriction check
+    const permRef = doc(db, 'vdo_userseries', currentUser.uid);
+    const permSnap = await getDoc(permRef);
+    if (!permSnap.exists() || !(permSnap.data().allowedSeries || []).includes(seriesId)) {
+      alert("You are not allowed to access this test series.");
+      await signOut(auth);
+      return;
+    }
+
+    // अगर user allowed है तभी आगे चलेगा
     await loadQuestionsFromFirebase();
-    
-    // Start live leaderboard subscription right after login
-    subscribeLiveLeaderboard();
+    subscribeLiveLeaderboard();    
+
 
     // increment per-login attempt counter (users get only 3 full exam attempts; on 4th+ show results only)
     const aRef = doc(db, 'attempts', `${currentUser.uid}_${examId}`);
@@ -1171,5 +1180,6 @@ function hideAll(){
 
 
 </html>
+
 
 
