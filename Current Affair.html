@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Current Affairs | ExamSeries</title>
   <meta name="description" content="Stay updated with daily current affairs for competitive exams. Comprehensive coverage of national and international events with PDF download options.">
-  <meta name="keywords" content="current affairs, daily news, exam preparation, GK, general knowledge, PDF download">
+  <meta name="keywords" content="current affairs, daily news, exam preparation, GK, general knowledge, PDF download, Rajasthan GK, Indian GK">
   <meta name="author" content="ExamSeries">
   <link rel="canonical" href="https://examseries.in/daily-current-affairs">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
+ :root {
       --primary: #4a148c;
       --primary-light: #7c43bd;
       --secondary: #7b1fa2;
@@ -727,6 +727,70 @@
       margin: 20px 0;
       border-radius: 4px;
     }
+
+    /* Sidebar GK Section */
+    .sidebar {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
+    .sidebar h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+    .sidebar a:hover {
+      background: var(--light);
+      color: var(--accent);
+    }
+    .dropdown {
+      margin-bottom: 10px;
+    }
+    .dropdown > span {
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .dropdown ul {
+      margin-left: 15px;
+      display: none;
+    }
+    .dropdown.active ul {
+      display: block;
+    }
+
+    /* Layout for content + sidebar */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 30px;
+    }
+
+    @media(max-width: 992px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -768,32 +832,66 @@
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="container">
-    <!-- Filter Section -->
-    <div class="filter-section">
-      <h3 class="filter-title">समाचार फिल्टर करें</h3>
-      <div class="filter-options">
-        <div class="date-filter">
-          <label for="date-picker">तारीख चुनें:</label>
-          <input type="date" id="date-picker" class="date-picker">
-          <button class="filter-btn" id="applyFilter">Apply Filter</button>
-          <button class="reset-btn" id="resetFilter">सभी दिखाएं</button>
+  <!-- Main Content with Sidebar -->
+  <div class="container main-layout">
+    <div>
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <h3 class="filter-title">समाचार फिल्टर करें</h3>
+        <div class="filter-options">
+          <div class="date-filter">
+            <label for="date-picker">तारीख चुनें:</label>
+            <input type="date" id="date-picker" class="date-picker">
+            <button class="filter-btn" id="applyFilter">Apply Filter</button>
+            <button class="reset-btn" id="resetFilter">सभी दिखाएं</button>
+          </div>
+          <div class="date-filter">
+            <label for="month-picker">महीना चुनें:</label>
+            <select id="month-picker" class="date-picker">
+              <option value="">-- Select Month --</option>
+              <option value="2025-09">सितंबर 2025</option>
+              <option value="2025-08">अगस्त 2025</option>
+              <option value="2025-07">जुलाई 2025</option>
+              <!-- और भी महीने जोड़ सकते हैं -->
+            </select>
+            <button class="filter-btn" id="applyMonthFilter">Show Month News</button>
+          </div>
         </div>
+      </div>
+
+      <!-- Current Affairs Grid -->
+      <div class="current-affairs-grid" id="current-affairs-container"></div>
+
+      <!-- No Results -->
+      <div id="no-results" style="display: none; text-align: center; padding: 40px; background: white; border-radius: 10px; box-shadow: var(--shadow);">
+        <i class="fas fa-search" style="font-size: 48px; color: #ddd; margin-bottom: 15px;"></i>
+        <h3 style="color: var(--text-light); margin-bottom: 10px;">कोई समाचार नहीं मिला</h3>
+        <p style="color: var(--text-light);">चयनित तारीख या महीने के लिए कोई समाचार उपलब्ध नहीं है।</p>
       </div>
     </div>
 
-    <!-- Current Affairs Grid -->
-    <div class="current-affairs-grid" id="current-affairs-container">
-      <!-- Content will be loaded dynamically -->
-    </div>
-
-    <!-- No Results Message (Hidden by default) -->
-    <div id="no-results" style="display: none; text-align: center; padding: 40px; background: white; border-radius: 10px; box-shadow: var(--shadow);">
-      <i class="fas fa-search" style="font-size: 48px; color: #ddd; margin-bottom: 15px;"></i>
-      <h3 style="color: var(--text-light); margin-bottom: 10px;">कोई समाचार नहीं मिला</h3>
-      <p style="color: var(--text-light);">चयनित तारीख के लिए कोई समाचार उपलब्ध नहीं है। कृपया कोई अन्य तारीख चुनें या सभी समाचार देखने के लिए रीसेट बटन दबाएं।</p>
-    </div>
+    <!-- Sidebar GK -->
+    <aside class="sidebar">
+      <h3>📘 Static GK</h3>
+      <div class="dropdown">
+        <span>Rajasthan GK</span>
+        <ul>
+          <li><a href="#">Rajasthan History</a></li>
+          <li><a href="#">Rajasthan Polity</a></li>
+          <li><a href="#">Rajasthan Culture</a></li>
+          <li><a href="#">Rajasthan Geography</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <span>Indian GK</span>
+        <ul>
+          <li><a href="#">Indian History</a></li>
+          <li><a href="#">Indian Polity</a></li>
+          <li><a href="#">Indian Culture</a></li>
+          <li><a href="#">Indian Geography</a></li>
+        </ul>
+      </div>
+    </aside>
   </div>
 
   <!-- Modal for detailed view -->
@@ -852,13 +950,13 @@
     </div>
   </div>
 
-  <!-- Footer -->
+ <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
           <h3>ExamSeries</h3>
-          <p>प्रतियोगी परीक्षा की तैयारी के लिए आपका विश्वसनीय साथी। हम उच्च गुणवत्ता वाली टेस्ट सीरीज़ और अध्ययन सामग्री प्रदान करते हैं।</p>
+          <p>Your trusted partner for competitive exam preparation. We provide high-quality test series and study material.</p>
           <div class="social-links">
             <a href="#" title="ExamSeries Facebook Channel"><i class="fab fa-facebook-f"></i></a>
             <a href="https://whatsapp.com/channel/0029VbBFyR44yltOjV8QC23N" title="ExamSeries Whatsapp Channel"><i class="fab fa-whatsapp"></i></a>
@@ -869,40 +967,40 @@
         </div>
         
         <div class="footer-column">
-          <h3>टेस्ट सीरीज़</h3>
+          <h3>Test Series</h3>
           <ul class="footer-links">
-            <li><a href="Fourth/fourthgrademain.html"><i class="fas fa-arrow-right"></i> फोर्थ ग्रेड परीक्षा</a></li>
-            <li><a href="VDO/vdomain.html"><i class="fas fa-arrow-right"></i> VDO परीक्षा</a></li>
-            <li><a href="#"><i class="fas fa-arrow-right"></i> राजस्थान SI</a></li>
+            <li><a href="Fourth/fourthgrademain.html"><i class="fas fa-arrow-right"></i> Fourth Grade Exam</a></li>
+            <li><a href="VDO/vdomain.html"><i class="fas fa-arrow-right"></i> VDO Exam</a></li>
+            <li><a href="#"><i class="fas fa-arrow-right"></i> Rajasthan SI</a></li>
             <li><a href="#"><i class="fas fa-arrow-right"></i> REET</a></li>
             <li><a href="#"><i class="fas fa-arrow-right"></i> GK Master</a></li>
-            <li><a href="Hindi/hindimain.html"><i class="fas fa-arrow-right"></i> हिंदी मास्टर सीरीज़</a></li>
+			<li><a href="Hindi/hindimain.html"><i class="fas fa-arrow-right"></i> Hindi Master Series</a></li>
           </ul>
         </div>
         
         <div class="footer-column">
-          <h3>त्वरित लिंक</h3>
+          <h3>Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="index.html"><i class="fas fa-arrow-right"></i> होम</a></li>
-            <li><a href="about.html"><i class="fas fa-arrow-right"></i> हमारे बारे में</a></li>
-            <li><a href="contact.html"><i class="fas fa-arrow-right"></i> संपर्क करें</a></li>
-            <li><a href="terms.html"><i class="fas fa-arrow-right"></i> नियम और शर्तें</a></li>
+            <li><a href="index.html"><i class="fas fa-arrow-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-arrow-right"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fas fa-arrow-right"></i> Contact Us</a></li>
+            <li><a href="terms.html"><i class="fas fa-arrow-right"></i> Terms & Conditions</a></li>
           </ul>
         </div>
         
         <div class="footer-column">
-          <h3>संपर्क जानकारी</h3>
+          <h3>Contact Info</h3>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt"></i> सीकर, राजस्थान</li>
+            <li><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan</li>
             <li><i class="fas fa-phone"></i> +91 9998101012</li>
             <li><i class="fas fa-envelope"></i> info@examseries.in</li>
-            <li><i class="fas fa-clock"></i> सोम-शनि: सुबह 9 से शाम 6 बजे तक</li>
+            <li><i class="fas fa-clock"></i> Mon-Sat: 9AM to 6PM</li>
           </ul>
         </div>
       </div>
       
       <div class="copyright">
-        <p>&copy; 2025 ExamSeries. सर्वाधिकार सुरक्षित।</p>
+        <p>&copy; 2025 ExamSeries. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -912,8 +1010,7 @@
   </div>
 
   <script>
-    // Sample current affairs data (in a real application, this would come from a database)
-    const currentAffairsData = [
+   const currentAffairsData = [
       {
         id: 1,
         category: "राष्ट्रीय समाचार",
@@ -1289,9 +1386,33 @@ id: 7,
         generateCards(currentAffairsData);
       });
     });
+
+    // Filter by month
+    const monthPicker = document.getElementById('month-picker');
+    const applyMonthFilter = document.getElementById('applyMonthFilter');
+
+    function filterByMonth(month) {
+      if (!month) {
+        generateCards(currentAffairsData);
+        return;
+      }
+      const filteredData = currentAffairsData.filter(item => item.date.startsWith(month));
+      generateCards(filteredData);
+    }
+
+    applyMonthFilter.addEventListener('click', () => {
+      filterByMonth(monthPicker.value);
+    });
+
+    // Sidebar dropdown toggle
+    document.querySelectorAll('.dropdown > span').forEach(span => {
+      span.addEventListener('click', () => {
+        span.parentElement.classList.toggle('active');
+      });
+    });
   </script>
-  
-  <!-- External libraries for PDF generation -->
+<!-- External libraries for PDF generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
 </body>
 </html>
