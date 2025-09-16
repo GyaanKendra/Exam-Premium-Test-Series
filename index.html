@@ -420,56 +420,90 @@
       font-size: 16px;
       margin-left: 8px;
     }
-    
-    /* Features Section */
-    .features {
-      padding: 80px 0;
-      background: white;
-      margin-bottom: 60px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 35px;
-    }
-    
-    .feature-card {
-      text-align: center;
-      padding: 35px 25px;
-      border-radius: 12px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      background: var(--off-white);
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .feature-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, var(--primary-light), var(--primary));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 25px;
-      font-size: 32px;
-      color: white;
-      box-shadow: 0 8px 20px rgba(74, 20, 140, 0.2);
-    }
-    
-    .feature-title {
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    
+
+/* Premium Notes Section */
+.notes-section {
+  padding: 80px 0;
+  background: #fff;
+  margin-bottom: 60px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.notes-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 40px 0 25px;
+  border-left: 5px solid var(--accent);
+  padding-left: 10px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.notes-card {
+  background: var(--off-white);
+  border-radius: 15px;
+  padding: 25px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: var(--shadow);
+}
+
+.notes-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  background: #fff;
+}
+
+.notes-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  box-shadow: 0 6px 15px rgba(74, 20, 140, 0.25);
+}
+
+.notes-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.notes-card p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.notes-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: white;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.notes-btn:hover {
+  background: #c2185b;
+}
+
     /* Testimonials */
     .testimonials {
       padding: 80px 0;
@@ -1099,68 +1133,77 @@
           <button class="btn btn-primary">Enroll Now</button>
         </div>
       </div>
-		 
-		
     </div>
-	  
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="container">
-      <h2 class="section-title">Why Choose Our Test Series?</h2>
+ <!-- Premium Notes Section -->
+<section class="notes-section">
+  <div class="container">
+    <h2 class="section-title">📘 Rajasthan & Indian GK Notes for Competitive Exams</h2>
+    <p style="text-align:center; margin-bottom:40px; color:var(--text-light); font-size:1.1rem;">
+      Free & Premium <strong>study notes</strong> for <strong>Rajasthan GK</strong> and <strong>Indian GK</strong>. 
+      Well-structured, exam-focused, and perfect for <strong>RAS, Patwari, SSC, UPSC</strong> and other competitive exams.
+    </p>
+    
+    <!-- Rajasthan Notes -->
+    <h3 class="notes-heading">📍 Rajasthan GK Notes</h3>
+    <div class="notes-grid">
+      <div class="notes-card" onclick="window.location.href='/Rajasthan History/Rajasthanprachinhistory.html
+'">
+        <div class="notes-icon"><i class="fas fa-landmark"></i></div>
+        <h4>Rajasthan History Notes</h4>
+        <p>Important rulers, battles, freedom struggle & historical events of Rajasthan for exams.</p>
+        <span class="notes-btn">Start Reading →</span>
+      </div>
       
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3 class="feature-title">Performance Analytics</h3>
-          <p>Detailed insights into your strengths and weaknesses with comparative analysis.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3 class="feature-title">Mobile Friendly</h3>
-          <p>Take tests anytime, anywhere on your mobile, tablet or desktop.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <h3 class="feature-title">Real Exam Simulation</h3>
-          <p>Experience the actual exam environment with timed tests and similar interface.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <h3 class="feature-title">Detailed Solutions</h3>
-          <p>Comprehensive explanations for each question to enhance understanding.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3 class="feature-title">Expertly Curated</h3>
-          <p>Content created by subject matter experts and experienced educators.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-sync-alt"></i>
-          </div>
-          <h3 class="feature-title">Regular Updates</h3>
-          <p>Constantly updated content based on latest exam patterns and syllabi.</p>
-        </div>
+      <div class="notes-card" onclick="window.location.href='notes/rajasthan-polity.html'">
+        <div class="notes-icon"><i class="fas fa-gavel"></i></div>
+        <h4>Rajasthan Polity Notes</h4>
+        <p>Complete polity of Rajasthan – governance, administration, constitution & local bodies.</p>
+        <span class="notes-btn">Start Reading →</span>
+      </div>
+      
+      <div class="notes-card" onclick="window.location.href='notes/rajasthan-culture.html'">
+        <div class="notes-icon"><i class="fas fa-theater-masks"></i></div>
+        <h4>Rajasthan Culture Notes</h4>
+        <p>Art, festivals, fairs, folk dance, music & cultural heritage for Rajasthan exams.</p>
+        <span class="notes-btn">Start Reading →</span>
+      </div>
+      
+      <div class="notes-card" onclick="window.location.href='notes/rajasthan-geography.html'">
+        <div class="notes-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <h4>Rajasthan Geography Notes</h4>
+        <p>Climate, rivers, soil, natural resources & complete Rajasthan geography in simple form.</p>
+        <span class="notes-btn">Start Reading →</span>
       </div>
     </div>
-  </section>
+    
+    <!-- Indian Notes -->
+    <h3 class="notes-heading">🌏 Indian GK Notes</h3>
+    <div class="notes-grid">
+      <div class="notes-card" onclick="window.location.href='notes/indian-history.html'">
+        <div class="notes-icon"><i class="fas fa-book"></i></div>
+        <h4>Indian History Notes</h4>
+        <p>Ancient, Medieval & Modern Indian history with exam-ready timelines & events.</p>
+        <span class="notes-btn">Start Reading →</span>
+      </div>
+      
+      <div class="notes-card" onclick="window.location.href='notes/indian-polity.html'">
+        <div class="notes-icon"><i class="fas fa-university"></i></div>
+        <h4>Indian Polity Notes</h4>
+        <p>Indian Constitution, governance, rights, duties & political system in detail.</p>
+        <span class="notes-btn">Start Reading →</span>
+      </div>
+      
+      <div class="notes-card" onclick="window.location.href='notes/indian-geography.html'">
+        <div class="notes-icon"><i class="fas fa-globe-asia"></i></div>
+        <h4>Indian Geography Notes</h4>
+        <p>India’s physical features, rivers, climate, natural resources & environment topics.</p>
+        <span class="notes-btn">Start Reading →</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Testimonials -->
   <section class="testimonials">
@@ -1436,6 +1479,7 @@
   </script>
 </body>
 </html>
+
 
 
 
