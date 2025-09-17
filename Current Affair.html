@@ -791,7 +791,68 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+/* Premium Sidebar Styling */
+.premium-sidebar {
+  background: linear-gradient(135deg, #ffffff, #f9f4ff);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+}
+.premium-sidebar h3 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+.premium-sidebar .dropdown {
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 10px;
+}
+.premium-sidebar .dropdown > span {
+  font-weight: 600;
+  color: var(--secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+.premium-sidebar .dropdown > span:hover {
+  color: var(--accent);
+}
+.premium-sidebar ul {
+  margin-left: 20px;
+  display: none;
+  padding-top: 8px;
+}
+.premium-sidebar .dropdown.active ul {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.premium-sidebar a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+.premium-sidebar a:hover {
+  background: var(--light);
+  color: var(--accent);
+  transform: translateX(5px);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
 </head>
 <body>
   <!-- Header -->
@@ -871,27 +932,65 @@
     </div>
 
     <!-- Sidebar GK -->
-    <aside class="sidebar">
-      <h3>📘 Static GK</h3>
-      <div class="dropdown">
-        <span>Rajasthan GK</span>
-        <ul>
-          <li><a href="#">Rajasthan History</a></li>
-          <li><a href="#">Rajasthan Polity</a></li>
-          <li><a href="#">Rajasthan Culture</a></li>
-          <li><a href="#">Rajasthan Geography</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <span>Indian GK</span>
-        <ul>
-          <li><a href="#">Indian History</a></li>
-          <li><a href="#">Indian Polity</a></li>
-          <li><a href="#">Indian Culture</a></li>
-          <li><a href="#">Indian Geography</a></li>
-        </ul>
-      </div>
-    </aside>
+    
+<aside class="sidebar premium-sidebar">
+  <h3>📘 Static GK</h3>
+  <div class="dropdown">
+    <span><i class="fas fa-landmark"></i> Rajasthan GK</span>
+    <ul>
+      <li><a href="#">Rajasthan History</a></li>
+      <li><a href="#">Rajasthan Polity</a></li>
+      <li><a href="#">Rajasthan Culture</a></li>
+      <li><a href="#">Rajasthan Geography</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <span><i class="fas fa-flag"></i> Indian GK</span>
+    <ul>
+      <li><a href="#">Indian History</a></li>
+      <li><a href="#">Indian Polity</a></li>
+      <li><a href="#">Indian Culture</a></li>
+      <li><a href="#">Indian Geography</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <span><i class="fas fa-globe"></i> World GK</span>
+    <ul>
+      <li><a href="#">World History</a></li>
+      <li><a href="#">World Geography</a></li>
+      <li><a href="#">International Organizations</a></li>
+      <li><a href="#">UN & World Affairs</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <span><i class="fas fa-flask"></i> Science & Tech</span>
+    <ul>
+      <li><a href="#">Physics GK</a></li>
+      <li><a href="#">Chemistry GK</a></li>
+      <li><a href="#">Biology GK</a></li>
+      <li><a href="#">Space & Technology</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <span><i class="fas fa-coins"></i> Economy & Banking</span>
+    <ul>
+      <li><a href="#">Indian Economy</a></li>
+      <li><a href="#">World Economy</a></li>
+      <li><a href="#">Banking Awareness</a></li>
+      <li><a href="#">Budget & Policies</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <span><i class="fas fa-trophy"></i> Sports & Awards</span>
+    <ul>
+      <li><a href="#">Sports GK</a></li>
+      <li><a href="#">Olympics & Tournaments</a></li>
+      <li><a href="#">Awards & Honours</a></li>
+      <li><a href="#">Books & Authors</a></li>
+    </ul>
+  </div>
+</aside>
+
   </div>
 
   <!-- Modal for detailed view -->
@@ -1439,4 +1538,3 @@ id: 7,
 </body>
 </body>
 </html>
-
