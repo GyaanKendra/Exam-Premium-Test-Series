@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - ExamSeries</title>
+  <title>Contact Us | ExamSeries - Best Online Test Series for Rajasthan & India Competitive Exams</title>
+<meta name="description" content="Get in touch with ExamSeries for queries, support, and guidance. We provide online test series for Rajasthan exams like RAS, REET, VDO, Constable and all India level competitive exams. Contact us today!">
+<meta name="keywords" content="ExamSeries contact, Rajasthan competitive exam contact, RAS help, REET support, VDO exam guidance, Online test series India, exam preparation Rajasthan, exam support contact">
+<meta property="og:title" content="Contact ExamSeries | Rajasthan & India Online Test Series">
+<meta property="og:description" content="Have questions about our online test series? Contact ExamSeries for support with Rajasthan exams like RAS, REET, VDO and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.examseries.com/contact">
+<meta property="og:image" content="https://www.examseries.com/contact-banner.jpg">
+<link rel="canonical" href="https://www.examseries.com/contact.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
+:root {
       --primary: #4a148c;
       --primary-light: #7c43bd;
       --secondary: #7b1fa2;
@@ -617,6 +625,51 @@
       transform: translateY(-3px);
     }
     
+    /* Form Status Messages */
+    .form-status {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+    
+    .form-status.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .form-status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    /* Loading Animation */
+    .submit-btn.loading {
+      position: relative;
+      color: transparent;
+    }
+    
+    .submit-btn.loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
     /* Mobile Responsiveness */
     @media (max-width: 992px) {
       .nav-menu {
@@ -701,6 +754,26 @@
       }
     }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "ExamSeries",
+    "url": "https://www.examseries.com/contact",
+    "logo": "https://www.examseries.com/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9950399752
+      "contactType": "customer support",
+      "areaServed": "IN",
+      "availableLanguage": ["en","hi"]
+    }
+  }
+}
+</script>
+
 </head>
 <body>
   <!-- Header -->
@@ -718,13 +791,12 @@
         <!-- Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="#">Current Affair</a></li>
-          <li><a href="Free/Freemain.html">Free Tests</a></li>
+	<li><a href="about.html" title="About ExamSeries - Online Test Preparation Platform">About Us</a></li>
+          <li><a href="Current Affair.html" title="Latest Daily Current Affairs for Exams">Current Affair</a></li>
+	<li><a href="Free/Freemain.html" title="Free Online Mock Tests for Rajasthan & India Exams">Free Tests</a></li>
 		<li><a href="exam-result.html" title="Check Exam Results and Scorecard - Rajasthan & India Competitive Exams">Result</a></li>
           <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
-
 
         <!-- Mobile Menu Button -->
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -738,8 +810,8 @@
   <section class="contact-hero">
     <div class="container">
       <div class="contact-hero-content">
-        <h2>Get in Touch With Us</h2>
-        <p>Have questions about our test series or need assistance? Our team is here to help you succeed in your exam preparation journey.</p>
+        <h2>Contact ExamSeries – Online Test Series for Rajasthan & India Competitive Exams</h2>
+        <p>Reach out to ExamSeries for support, queries, or feedback about our Rajasthan exams (RAS, REET, VDO, Constable) and all India level competitive test series.</p>
       </div>
     </div>
   </section>
@@ -795,6 +867,7 @@
         
         <div class="contact-form">
           <h3>Send Us a Message</h3>
+          <div id="formStatus" class="form-status"></div>
           <form id="contactForm">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -821,7 +894,7 @@
               <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
             </div>
             
-            <button type="submit" class="submit-btn">
+            <button type="submit" class="submit-btn" id="submitBtn">
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
           </form>
@@ -887,23 +960,23 @@
           <h3>ExamSeries</h3>
           <p>Your trusted partner for competitive exam preparation. We provide high-quality test series and study material.</p>
           <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/exameseries?igsh=Mmk5dGFyMHJpbWJp"><i class="fab fa-instagram"></i></a>
-            <a href="https://t.me/exameseries"><i class="fab fa-telegram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="ExamSeries Facebook Channel"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://whatsapp.com/channel/0029VbBFyR44yltOjV8QC23N" title="ExamSeries Whatsapp Channel"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/exameseries?igsh=Mmk5dGFyMHJpbWJp" title="ExamSeries Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/exameseries" title="ExamSeries Telegram Channel"><i class="fab fa-telegram"></i></a>
+            <a href="#" title="ExamSeries Youtube Channel"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         
         <div class="footer-column">
           <h3>Test Series</h3>
           <ul class="footer-links">
+            <li><a href="Fourth/fourthgrademain.html"><i class="fas fa-arrow-right"></i> Fourth Grade Exam</a></li>
             <li><a href="VDO/vdomain.html"><i class="fas fa-arrow-right"></i> VDO Exam</a></li>
-            <li><a href="Fourth/fourthgrademain.html"><i class="fas fa-chevron-right"></i> Fourth Grade</a></li>
-            <li><a href="Hindi/hindimain.html"><i class="fas fa-arrow-right"></i> Hindi Master Series</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> RAS</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> REET</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Police Constable</a></li>            
+            <li><a href="#"><i class="fas fa-arrow-right"></i> Rajasthan SI</a></li>
+            <li><a href="#"><i class="fas fa-arrow-right"></i> REET</a></li>
+            <li><a href="#"><i class="fas fa-arrow-right"></i> GK Master</a></li>
+			<li><a href="Hindi/hindimain.html"><i class="fas fa-arrow-right"></i> Hindi Master Series</a></li>
           </ul>
         </div>
         
@@ -921,8 +994,8 @@
           <h3>Contact Info</h3>
           <ul class="footer-links">
             <li><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan</li>
-            <li><i class="fas fa-phone"></i> +91 9876543210</li>
-            <li><i class="fas fa-envelope"></i> info@examseries.com</li>
+            <li><i class="fas fa-phone"></i> +91 9998101012</li>
+            <li><i class="fas fa-envelope"></i> info@examseries.in</li>
             <li><i class="fas fa-clock"></i> Mon-Sat: 9AM to 6PM</li>
           </ul>
         </div>
@@ -938,93 +1011,81 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-      mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-    
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        header.classList.add('header-scrolled');
-      } else {
-        header.classList.remove('header-scrolled');
-      }
-    });
-    
-    // Back to top button
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-    
-    backToTop.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    
-    // FAQ accordion
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', function() {
-        this.querySelector('i').classList.toggle('fa-chevron-down');
-        this.querySelector('i').classList.toggle('fa-chevron-up');
-        this.nextElementSibling.classList.toggle('active');
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+  <script type="module">
+  // 1) CDN imports (module style). यदि आप अलग version लेना चाहें तो वर्ज़न number बदल दें।
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+  // 2) --- अपने Firebase project की config यहाँ पेस्ट करें ---
+  const firebaseConfig = {
+  apiKey: "AIzaSyBR2WYFNB5a332NtMlFWMKYdQkJWE5zKU0",
+  authDomain: "contactmessages-97863.firebaseapp.com",
+  projectId: "contactmessages-97863",
+  storageBucket: "contactmessages-97863.firebasestorage.app",
+  messagingSenderId: "908863121842",
+  appId: "1:908863121842:web:9044854aeb7b8948d25cab"
+};
+
+  // 3) Initialize
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // 4) Form handling (same element IDs हैं जैसा आपकी file में हैं)
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !subject || !message) {
+      showStatus('Please fill in all required fields.', 'error');
+      return;
+    }
+
+    // loading animation
+    submitBtn.classList.add('loading');
+
+    try {
+      // add a new document into collection 'contactMessages'
+      const docRef = await addDoc(collection(db, 'contactMessages'), {
+        name,
+        email,
+        phone,
+        subject,
+        message,
+        createdAt: serverTimestamp()
       });
-    });
-    
-    // Contact form submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Form validation
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
-      if (name && email && subject && message) {
-        // In a real application, you would send this data to your server
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-      } else {
-        alert('Please fill in all required fields.');
-      }
-    });
-    
-    // Animation on scroll
-    document.addEventListener('DOMContentLoaded', function() {
-      const animatedElements = document.querySelectorAll('.contact-info, .contact-form, .accordion-item');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      animatedElements.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(el);
-      });
-    });
-  </script>
+
+      // success
+      showStatus('Thank you for your message! We will get back to you soon.', 'success');
+      contactForm.reset();
+      console.log('Saved contact message, id:', docRef.id);
+    } catch (err) {
+      console.error('Firestore error:', err);
+      showStatus('Sorry, there was an error saving your message. Please try again later.', 'error');
+    } finally {
+      submitBtn.classList.remove('loading');
+    }
+  });
+
+  // helper if you don't already have it
+  function showStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = 'form-status ' + type;
+    formStatus.style.display = 'block';
+    setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
+  }
+</script>
 </body>
-
 </html>
-
