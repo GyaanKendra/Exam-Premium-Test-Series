@@ -994,7 +994,6 @@
           <h3>Contact Info</h3>
           <ul class="footer-links">
             <li><i class="fas fa-map-marker-alt"></i> Sikar, Rajasthan</li>
-            <li><i class="fas fa-phone"></i> +91 9998101012</li>
             <li><i class="fas fa-envelope"></i> info@examseries.in</li>
             <li><i class="fas fa-clock"></i> Mon-Sat: 9AM to 6PM</li>
           </ul>
@@ -1086,6 +1085,16 @@
     formStatus.style.display = 'block';
     setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
   }
+	  // FAQ accordion
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function() {
+        this.querySelector('i').classList.toggle('fa-chevron-down');
+        this.querySelector('i').classList.toggle('fa-chevron-up');
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
 </script>
 </body>
 </html>
+
