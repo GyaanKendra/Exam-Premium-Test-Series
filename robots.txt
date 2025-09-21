@@ -1,0 +1,11 @@
+# Allow all robots to crawl the website
+User-agent: *
+Disallow:
+
+# Disallow specific directory
+User-agent: *
+Disallow: /private/
+
+# Allow a specific page in a disallowed directory
+User-agent: *
+Allow: /private/allowed-page.html
