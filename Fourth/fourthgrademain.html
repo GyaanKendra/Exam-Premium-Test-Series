@@ -59,7 +59,10 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-    
+    html, body {
+  overflow-x: hidden;
+}
+
     body {
       background: var(--off-white);
       color: var(--text);
@@ -738,21 +741,23 @@
       }
       
       .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -300px;
-        width: 300px;
-        height: 100vh;
-        background: var(--primary);
-        flex-direction: column;
-        padding: 100px 30px 30px;
-        transition: right 0.3s ease;
-        z-index: 1000;
-      }
-      
-      .nav-menu.active {
-        right: 0;
-      }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: var(--primary);
+  flex-direction: column;
+  padding: 100px 30px 30px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-menu.active {
+  transform: translateX(0);
+}
+
       
       .mobile-menu-btn {
         display: block;
@@ -927,7 +932,7 @@
         <ul class="nav-menu" id="navMenu">
           <li><a href="../index.html">Home</a></li>
             <li><a href="../about.html">About Us</a></li>
-          <li><a href="../Current Affair.html">Current Affair</a></li>
+          <li><a href="../Current-Affair.html">Current Affair</a></li>
           <li><a href="../Free/Freemain.html">Free Tests</a></li>
 		<li><a href="../exam-result.html" title="Check Exam Results and Scorecard - Rajasthan & India Competitive Exams">Result</a></li>
           <li><a href="../contact.html">Contact Us</a></li>        
@@ -1512,4 +1517,5 @@
   </script>
 </body>
 </html>
+
 
