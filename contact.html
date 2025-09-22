@@ -1089,6 +1089,12 @@
     formStatus.style.display = 'block';
     setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
   }
+	  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
 	  // FAQ accordion
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach(header => {
@@ -1101,5 +1107,6 @@
 </script>
 </body>
 </html>
+
 
 
