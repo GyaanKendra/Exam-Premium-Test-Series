@@ -24,18 +24,20 @@
 </url>
       <url>
   <loc>https://examseries.in/current-affairs.html</loc>
-  <lastmod>2025-09-23T12:30:00+00:00</lastmod>
+  <lastmod>2025-09-23T00:00:00+05:30</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
+
       <url>
   <loc>https://examseries.in/free-test-series/all-free-test-series.html</loc>
-  <lastmod>2025-09-23T12:30:00+00:00</lastmod>
-  <priority>0.80</priority>
+<lastmod>2025-09-23T00:00:00+05:30</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
   <loc>https://examseries.in/exam-result.html</loc>
-  <lastmod>2025-09-21T19:04:41+00:00</lastmod>
-  <priority>0.80</priority>
+<lastmod>2025-09-23T00:00:00+05:30</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
   <loc>https://examseries.in/contact.html</loc>
@@ -49,7 +51,7 @@
 </url>
 <url>
   <loc>https://examseries.in/VDO/vdomain.html</loc>
-  <lastmod>2025-09-21T19:04:41+00:00</lastmod>
+<lastmod>2025-09-23T16:30:00+05:30</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -64,11 +66,6 @@
 </url>
 <url>
   <loc>https://examseries.in/rajasthan-history/rajasthan-praachin-itihas.html</loc>
-  <lastmod>2025-09-21T19:04:41+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://examseries.in/rajasthan-polity/history-background.html</loc>
   <lastmod>2025-09-21T19:04:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -224,7 +221,7 @@
 </url>
 <url>
   <loc>https://examseries.in/rajasthan-geography/rajasthan-mineral-resources</loc>
-  <lastmod>2025-09-21T19:04:41+00:00</lastmod>
+  <lastmod>2025-09-23T19:04:41+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
@@ -262,7 +259,31 @@
   <lastmod>2025-09-21T19:04:41+00:00</lastmod>
   <priority>0.41</priority>
 </url>
-
-
+<url>
+  <loc>https://examseries.in/indian-geography/bharat-bhugol-parichay.html</loc>
+  <lastmod>2025-09-23T00:00:00+05:30</lastmod>
+<priority>0.41</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/indian-geography/bharat-ka-bhugolik-visheshata.html</loc>
+  <lastmod>2025-09-23T00:00:00+05:30</lastmod>
+<priority>0.41</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/indian-history/prachin-bharat-itihas.html</loc>
+  <lastmod>2025-09-23T00:00:00+05:30</lastmod>
+<priority>0.41</priority>
+</url>
+    <url>
+  <loc>https://examseries.in/indian-polity/bharat-ka-samvidhan.html</loc>
+  <lastmod>2025-09-23T00:00:00+05:30</lastmod>
+<priority>0.41</priority>
+</url>
+   <url>
+  <loc>https://examseries.in/indian-polity/bharat-rajvyavastha-parichay.html</loc>
+  <lastmod>2025-09-23T00:00:00+05:30</lastmod>
+<priority>0.41</priority>
+</url>
 
 </urlset>
+
