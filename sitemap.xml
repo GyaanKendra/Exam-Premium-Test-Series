@@ -8,7 +8,7 @@
 <url>
   <loc>https://examseries.in/</loc>
 <lastmod>2025-09-29T19:00:00+05:30</lastmod>
-  <priority>80.00</priority>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://examseries.in/about.html</loc>
@@ -343,6 +343,7 @@
 <priority>0.80</priority>
 </url>
 </urlset>
+
 
 
 
