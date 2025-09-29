@@ -29,7 +29,27 @@
 
       <url>
   <loc>https://examseries.in/free-test-series/all-free-test-series.html</loc>
-<lastmod>2025-09-25T21:19:00+05:30</lastmod>
+<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+    <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/free-test-series/sscgd01</loc>
+<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+    <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/free-test-series/sscgd02</loc>
+<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+    <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/free-test-series/sscgd03</loc>
+<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+    <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/free-test-series/sscgd04</loc>
+<lastmod>2025-09-29T18:55:00+05:30</lastmod>
     <priority>0.80</priority>
 </url>
 <url>
@@ -317,6 +337,16 @@
   <lastmod>2025-09-29T16:07:00+05:30</lastmod>
 <priority>0.80</priority>
 </url>
-
+ <url>
+  <loc>https://examseries.in/indian-polity/mool-adhikar</loc>
+  <lastmod>2025-09-29T18:44:00+05:30</lastmod>
+<priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://examseries.in/indian-polity/mool-kartavya</loc>
+  <lastmod>2025-09-29T18:44:00+05:30</lastmod>
+<priority>0.80</priority>
+</url>
 </urlset>
+
 
