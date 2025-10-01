@@ -1123,10 +1123,8 @@
             <label for="month-picker">महीना चुनें:</label>
             <select id="month-picker" class="date-picker">
               <option value="">-- Select Month --</option>
-              <option value="2025-09">October 2025</option>
+              <option value="2025-10">October 2025</option>
               <option value="2025-09">September 2025</option>
-              <option value="2025-08">August 2025</option>
-              <option value="2025-07">July 2025</option>
               <!-- और भी महीने जोड़ सकते हैं -->
             </select>
             <button class="filter-btn" id="applyMonthFilter">Show Month News</button>
@@ -3631,7 +3629,7 @@ id: 2,
       });
     });
 
-    // Filter by month
+     // Filter by month
     const monthPicker = document.getElementById('month-picker');
     const applyMonthFilter = document.getElementById('applyMonthFilter');
 
@@ -3645,8 +3643,33 @@ id: 2,
     }
 
     applyMonthFilter.addEventListener('click', () => {
-      filterByMonth(monthPicker.value);
-    });
+  const monthValue = monthPicker.value;
+  if (!monthValue) return;
+
+  // Month mapping
+  const monthNames = {
+    '01': 'january', '02': 'february', '03': 'march', '04': 'april',
+    '05': 'may', '06': 'june', '07': 'july', '08': 'august',
+    '09': 'september', '10': 'october', '11': 'november', '12': 'december'
+  };
+
+  const [year, month] = monthValue.split('-');
+  const monthName = monthNames[month];
+
+  // 🟡 अगर September 2025 है → current-affair.html पर redirect
+  if (month === '09' && year === '2025') {
+    window.location.href = 'current-affair.html';
+    return;
+  }
+
+  // 🟢 बाकी सभी महीनों के लिए → SEO friendly URL पर redirect
+  if (monthName) {
+    const redirectUrl = `/current-affairs/2025/current-affair-${monthName}-${year}.html`;
+    window.location.href = redirectUrl;
+  }
+});
+
+
 
     // Sidebar dropdown toggle
     document.querySelectorAll('.dropdown > span').forEach(span => {
@@ -3660,14 +3683,3 @@ id: 2,
 </body>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
