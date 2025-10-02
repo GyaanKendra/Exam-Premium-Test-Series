@@ -383,9 +383,8 @@
 
 <!-- Firebase + App Logic -->
 <script type="module">
-  const examId = "sscgd01"; // इस फाइल के लिए
-    const seriesId = "sscgd2025"; // हर टेस्ट सीरीज़ में बदलें (sscgd2025…)
-/* =======================
+  const examId = "sscgd01"; 
+    const seriesId = "sscgd2025"; 
    FIREBASE SETUP
    ======================= */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
@@ -567,7 +566,7 @@ async function handleUserLogin() {
 // Load questions from Firebase
 async function loadQuestionsFromFirebase() {
   try {
-    const questionsRef = doc(db, 'config', 'questions');
+    const questionsRef = doc(db, 'config', `${examId}_questions`);
     const questionsSnap = await getDoc(questionsRef);
     
     if (questionsSnap.exists()) {
@@ -591,7 +590,7 @@ async function loadQuestionsFromFirebase() {
 function subscribeToQuestions() {
   unsubscribeQuestions();
   
-  const questionsRef = doc(db, 'config', 'questions');
+  const questionsRef = doc(db, 'config', `${examId}_questions`);
   questionsUnsub = onSnapshot(questionsRef, (doc) => {
     if (doc.exists()) {
       examQuestions = doc.data().questions || [];
@@ -756,7 +755,7 @@ function calculateResults(){
     }
   });
   const positiveMarks = correct * 2;
-  const negativeMarks = incorrect * 0.25;
+  const negativeMarks = incorrect * -0.25;
   const totalScore = positiveMarks - negativeMarks;
   return {
     totalQuestions, attempted, unattempted, correct, incorrect,
@@ -979,6 +978,74 @@ async function showReadOnlyResultsAndBoard(){
 /* =======================
    Admin Panel (same UI; no hardcoded creds)
    ======================= */
+/* =======================
+   ADMIN: Manual Add, Edit & Reset Questions
+   ======================= */
+
+// ✅ Manual Add + Reset UI जोड़ना (Admin Panel के अंत में)
+const adminPanelExtraHTML = `
+  <div class="admin-card" style="margin-top:30px;">
+    <h3>Add Question Manually</h3>
+    <div class="file-upload">
+      <label>Question:</label>
+      <input type="text" id="manualQuestion" placeholder="Enter question" style="width:100%;margin-bottom:8px;">
+      <label>Option A:</label>
+      <input type="text" id="manualA" placeholder="Option A" style="width:100%;margin-bottom:8px;">
+      <label>Option B:</label>
+      <input type="text" id="manualB" placeholder="Option B" style="width:100%;margin-bottom:8px;">
+      <label>Option C:</label>
+      <input type="text" id="manualC" placeholder="Option C" style="width:100%;margin-bottom:8px;">
+      <label>Option D:</label>
+      <input type="text" id="manualD" placeholder="Option D" style="width:100%;margin-bottom:8px;">
+      <label>Correct Answer (A/B/C/D):</label>
+      <input type="text" id="manualAnswer" maxlength="1" placeholder="A" style="width:100%;margin-bottom:8px;">
+      <label>Explanation (optional):</label>
+      <textarea id="manualExplanation" placeholder="Explanation..." style="width:100%;margin-bottom:8px;"></textarea>
+    </div>
+    <button class="btn btn-primary" id="addManualBtn"><i class="fas fa-plus"></i> Add Question</button>
+    <button class="btn btn-secondary" id="resetAllBtn" style="margin-left:10px;"><i class="fas fa-trash"></i> Reset All</button>
+  </div>
+`;
+adminPanel.insertAdjacentHTML('beforeend', adminPanelExtraHTML);
+
+const addManualBtn = document.getElementById('addManualBtn');
+const resetAllBtn = document.getElementById('resetAllBtn');
+
+addManualBtn.addEventListener('click', async ()=>{
+  const q = document.getElementById('manualQuestion').value.trim();
+  const a = document.getElementById('manualA').value.trim();
+  const b = document.getElementById('manualB').value.trim();
+  const c = document.getElementById('manualC').value.trim();
+  const d = document.getElementById('manualD').value.trim();
+  const ans = document.getElementById('manualAnswer').value.trim().toUpperCase();
+  const exp = document.getElementById('manualExplanation').value.trim();
+
+  if(!q || !a || !b || !c || !d || !['A','B','C','D'].includes(ans)){
+    alert('Please fill all fields and choose correct answer (A/B/C/D)');
+    return;
+  }
+
+  const correctIndex = {A:0,B:1,C:2,D:3}[ans];
+  const newId = examQuestions.length ? examQuestions[examQuestions.length-1].id+1 : 1;
+  const newQ = { id:newId, question:q, options:[a,b,c,d], correctAnswer:correctIndex, explanation:exp };
+
+  examQuestions.push(newQ);
+  await setDoc(doc(db, 'config', `${examId}_questions`), { questions: examQuestions });
+  renderQuestionsTable();
+  alert('Question added successfully!');
+  ['manualQuestion','manualA','manualB','manualC','manualD','manualAnswer','manualExplanation'].forEach(id=>document.getElementById(id).value='');
+});
+
+resetAllBtn.addEventListener('click', async ()=>{
+  if(confirm('Are you sure you want to reset all questions?')){
+    examQuestions = [];
+    await setDoc(doc(db, 'config', `${examId}_questions`), { questions: [] });
+    renderQuestionsTable();
+    alert('All questions reset successfully.');
+  }
+});
+
+// ✅ UPDATED renderQuestionsTable with Edit button
 function renderQuestionsTable(){
   questionsTableBody.innerHTML='';
   examQuestions.forEach((q)=>{
@@ -990,10 +1057,43 @@ function renderQuestionsTable(){
       <td>${q.options[1]}</td>
       <td>${q.options[2]}</td>
       <td>${q.options[3]}</td>
-      <td>${String.fromCharCode(65 + q.correctAnswer)} (${q.options[q.correctAnswer]})</td>`;
+      <td>${String.fromCharCode(65 + q.correctAnswer)}</td>
+      <td><button class="btn btn-secondary btn-sm edit-btn" data-id="${q.id}"><i class="fas fa-edit"></i> Edit</button></td>
+    `;
     questionsTableBody.appendChild(row);
   });
+
+  document.querySelectorAll('.edit-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=> editQuestion(parseInt(btn.dataset.id)));
+  });
 }
+
+async function editQuestion(id){
+  const q = examQuestions.find(x=>x.id===id);
+  if(!q) return;
+  const newQ = prompt('Edit question text:', q.question) || q.question;
+  const newA = prompt('Edit Option A:', q.options[0]) || q.options[0];
+  const newB = prompt('Edit Option B:', q.options[1]) || q.options[1];
+  const newC = prompt('Edit Option C:', q.options[2]) || q.options[2];
+  const newD = prompt('Edit Option D:', q.options[3]) || q.options[3];
+  const newAns = prompt('Correct Answer (A/B/C/D):', String.fromCharCode(65+q.correctAnswer)).toUpperCase();
+  const newExp = prompt('Edit Explanation:', q.explanation||'') || '';
+
+  if(!['A','B','C','D'].includes(newAns)){
+    alert('Invalid answer. No changes saved.');
+    return;
+  }
+
+  q.question = newQ;
+  q.options = [newA,newB,newC,newD];
+  q.correctAnswer = {A:0,B:1,C:2,D:3}[newAns];
+  q.explanation = newExp;
+
+  await setDoc(doc(db, 'config', `${examId}_questions`), { questions: examQuestions });
+  renderQuestionsTable();
+  alert('Question updated!');
+}
+
 
 function handleExcelUpload(){
   const file=excelUpload.files[0];
@@ -1028,7 +1128,7 @@ async function processUploadedQuestions(data){
     });
     if(newQ.length>0){ 
       // Save to Firebase so all devices get the updated questions
-      const questionsRef = doc(db, 'config', 'questions');
+      const questionsRef = doc(db, 'config', `${examId}_questions`);
       await setDoc(questionsRef, { questions: newQ });
       
       examQuestions = newQ; 
@@ -1170,7 +1270,7 @@ async function doLogout(){
 
 function resetState(){
   userAnswers = Array(examQuestions.length).fill(null);
-  timeLeft = 20*60;
+  timeLeft = 60*60;
   currentQuestionIndex = 0;
   usernameInput.value=''; passwordInput.value='';
   userNameInput.value=''; adminUsernameInput.value=''; adminPasswordInput.value='';
@@ -1184,9 +1284,3 @@ function hideAll(){
 </script>
 </body>
 </html>
-
-
-
-
-
-
