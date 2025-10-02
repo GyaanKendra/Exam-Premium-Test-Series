@@ -18,7 +18,7 @@
 </url>
  <url>
   <loc>https://examseries.in/current-affair</loc>
-<lastmod>2025-10-02T18:31:00+05:30</lastmod>
+<lastmod>2025-10-02T23:08:00+05:30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
@@ -26,7 +26,7 @@
   <loc>https://examseries.in/current-affairs/2025/current-affair-september-2025.html</loc>
 <lastmod>2025-10-01T21:31:00+05:30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+  <priority>0.70</priority>
 </url>
 
       <url>
@@ -370,5 +370,6 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
 
 
