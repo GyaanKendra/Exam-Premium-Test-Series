@@ -36,25 +36,36 @@
 </url>
       <url>
   <loc>https://examseries.in/free-test-series/sscgd01</loc>
-<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+<lastmod>2025-10-02T17:38:00+05:30</lastmod>
 <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
       <url>
   <loc>https://examseries.in/free-test-series/sscgd02</loc>
-<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+<lastmod>2025-10-02T17:39:00+05:30</lastmod>
        <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
       <url>
   <loc>https://examseries.in/free-test-series/sscgd03</loc>
-<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+<lastmod>2025-10-02T17:45:00+05:30</lastmod>
         <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
       <url>
   <loc>https://examseries.in/free-test-series/sscgd04</loc>
-<lastmod>2025-09-29T18:55:00+05:30</lastmod>
+<lastmod>2025-10-02T18:01:00+05:30</lastmod>
+          <changefreq>monthly</changefreq>
+  <priority>0.40</priority>
+</url>
+   <url>
+  <loc>https://examseries.in/free-test-series/sscmts01</loc>
+<lastmod>2025-10-02T18:45:00+05:30</lastmod>
+          <changefreq>monthly</changefreq>
+  <priority>0.40</priority>
+</url>
+      <loc>https://examseries.in/free-test-series/sscmts02</loc>
+<lastmod>2025-10-02T18:45:00+05:30</lastmod>
           <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
@@ -370,6 +381,7 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
 
 
 
