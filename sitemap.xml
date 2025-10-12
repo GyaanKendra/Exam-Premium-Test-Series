@@ -12,13 +12,13 @@
 </url>
 <url>
   <loc>https://examseries.in/about.html</loc>
-<lastmod>2025-10-10T21:10:00+05:30</lastmod>
+<lastmod>2025-10-12T23:14:00+05:30</lastmod>
        <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
  <url>
   <loc>https://examseries.in/current-affair</loc>
-<lastmod>2025-10-12T00:27:00+05:30</lastmod>
+<lastmod>2025-10-12T23:23:00+05:30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
@@ -72,13 +72,13 @@
 </url>
 <url>
   <loc>https://examseries.in/exam-result.html</loc>
-<lastmod>2025-10-10T21:50:00+05:30</lastmod>
+<lastmod>2025-10-12T23:25:00+05:30</lastmod>
            <changefreq>weekly</changefreq>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://examseries.in/contact.html</loc>
-<lastmod>2025-10-10T21:52:00+05:30</lastmod>
+<lastmod>2025-10-12T23:26:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
@@ -256,7 +256,7 @@
 </url>
 <url>
   <loc>https://examseries.in/rajasthan-polity/constitutional-provisions</loc>
-<lastmod>2025-10-10T20:59:00+05:30</lastmod>
+<lastmod>2025-10-12T23:27:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
    <url>
@@ -353,7 +353,7 @@
 
     <url>
   <loc>https://examseries.in/indian-polity/bharat-ka-samvidhan</loc>
-<lastmod>2025-10-10T22:05:00+05:30</lastmod>
+<lastmod>2025-10-12T23:28:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
    <url>
@@ -459,6 +459,7 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
 
 
 
