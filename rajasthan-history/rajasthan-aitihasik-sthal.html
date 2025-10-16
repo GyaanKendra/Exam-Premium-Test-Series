@@ -392,20 +392,35 @@
         .data-table tr:hover {
             background: var(--light);
         }
-        .data-table {
-  overflow-x: auto;              /* horizontal scroll allow kare */
+       /* --- Fix: Make .data-table fully responsive --- */
+.data-table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border-bottom: 3px solid rgba(0,0,0,0.08); /* नीचे हल्की लाइन */
 }
 
-/* scroll bar thoda visible aur slim ho */
+.data-table table {
+  width: 100%;
+  min-width: 700px; /* ताकि कॉलम ठीक से दिखें */
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  white-space: nowrap; /* text wrap ना हो */
+}
+
 .data-table::-webkit-scrollbar {
   height: 8px;
 }
+
 .data-table::-webkit-scrollbar-thumb {
   background: rgba(0,0,0,0.2);
   border-radius: 4px;
 }
+
         .comparison-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1025,6 +1040,17 @@
             left: 0;
             color: var(--primary);
         }
+/* --- Fix: Prevent page scroll when mobile menu is open --- */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* mobile nav height fix */
+.nav-menu {
+  height: 100vh;
+  overflow-y: auto;
+}
+
     </style>
 </head>
 <body>
@@ -1590,13 +1616,14 @@
         const navMenu = document.getElementById('navMenu');
         
         mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            if (navMenu.classList.contains('active')) {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
+  navMenu.classList.toggle('active');
+  document.body.classList.toggle('menu-open', navMenu.classList.contains('active'));
+  if (navMenu.classList.contains('active')) {
+    mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+  } else {
+    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+});
         
         // Back to top functionality
         document.getElementById('backToTop').addEventListener('click', function() {
