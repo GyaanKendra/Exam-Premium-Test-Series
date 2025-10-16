@@ -389,7 +389,20 @@
         .data-table tr:hover {
             background: var(--light);
         }
-        
+        .data-table {
+  overflow-x: auto;              /* horizontal scroll allow kare */
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 3px solid rgba(0,0,0,0.08); /* नीचे हल्की लाइन */
+}
+
+/* scroll bar thoda visible aur slim ho */
+.data-table::-webkit-scrollbar {
+  height: 8px;
+}
+.data-table::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
         .comparison-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1644,8 +1657,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
