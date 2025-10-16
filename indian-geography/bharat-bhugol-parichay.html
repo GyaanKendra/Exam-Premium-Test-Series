@@ -392,7 +392,20 @@
         .data-table tr:hover {
             background: var(--light);
         }
-        
+        .data-table {
+  overflow-x: auto;              /* horizontal scroll allow kare */
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 3px solid rgba(0,0,0,0.08); /* नीचे हल्की लाइन */
+}
+
+/* scroll bar thoda visible aur slim ho */
+.data-table::-webkit-scrollbar {
+  height: 8px;
+}
+.data-table::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
         .comparison-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1680,8 +1693,7 @@
                     <ul class="chapter-links">
                         <li><a href="/indian-geography/bharat-bhugol-parichay" style="color: var(--accent-light);"><i class="fas fa-arrow-right" style="color: var(--accent-light);"></i> भारत का भूगोल परिचय</a></li>
 <li><a href="/indian-geography/bharat-ka-bhugolik-visheshata"><i class="fas fa-arrow-right"></i> भारत की भौगोलिक विशेषताएँ</a></li>
-<!---
-<li><a href="/indian-geography/bharat-ke-pradesh-aur-seema"><i class="fas fa-arrow-right"></i> भारत के प्रदेश और सीमाएँ</a></li>
+<!---<li><a href="/indian-geography/bharat-ke-pradesh-aur-seema"><i class="fas fa-arrow-right"></i> भारत के प्रदेश और सीमाएँ</a></li>
 <li><a href="/indian-geography/bharat-ke-parvat"><i class="fas fa-arrow-right"></i> भारत के पर्वत एवं पर्वतमाला</a></li>
 <li><a href="/indian-geography/bharat-ki-nadiya"><i class="fas fa-arrow-right"></i> भारत की नदियाँ एवं नदी प्रणाली</a></li>
 <li><a href="/indian-geography/bharat-ke-jalprapat-jheel"><i class="fas fa-arrow-right"></i> भारत के जलप्रपात और झीलें</a></li>
@@ -1769,7 +1781,10 @@
       </div>
     </div>
   </footer>
-
+   <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1883,9 +1898,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
