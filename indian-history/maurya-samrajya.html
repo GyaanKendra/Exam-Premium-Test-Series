@@ -392,7 +392,21 @@
         .data-table tr:hover {
             background: var(--light);
         }
-        
+        .data-table {
+  overflow-x: auto;              /* horizontal scroll allow kare */
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 3px solid rgba(0,0,0,0.08); /* नीचे हल्की लाइन */
+}
+
+/* scroll bar thoda visible aur slim ho */
+.data-table::-webkit-scrollbar {
+  height: 8px;
+}
+.data-table::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
         .comparison-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1860,10 +1874,10 @@
                         <li><a href="/indian-history/mahajanpad-magadh"><i class="fas fa-arrow-right"></i> महाजनपद और मगध साम्राज्य</a></li>
                         <li><a href="/indian-history/maurya-samrajya" style="color: var(--accent-light);"><i class="fas fa-arrow-right" style="color: var(--accent-light);"></i> मौर्य साम्राज्य</a></li>
                         <li><a href="/indian-history/gupt-samrajya"><i class="fas fa-arrow-right"></i> गुप्त साम्राज्य</a></li>
-<<li><a href="/indian-history/harshvardhan"><i class="fas fa-arrow-right"></i> हर्षवर्धन और प्रारंभिक राज्य</a></li>
+<li><a href="/indian-history/harshvardhan"><i class="fas fa-arrow-right"></i> हर्षवर्धन और प्रारंभिक राज्य</a></li>
 <li><a href="/indian-history/delhi-saltanat"><i class="fas fa-arrow-right"></i> दिल्ली सल्तनत</a></li>
 <li><a href="/indian-history/mughal-samrajya"><i class="fas fa-arrow-right"></i> मुगल साम्राज्य</a></li>
-!---<li><a href="/indian-history/maratha-shakti"><i class="fas fa-arrow-right"></i> मराठा शक्ति का उदय</a></li>
+<!---<li><a href="/indian-history/maratha-shakti"><i class="fas fa-arrow-right"></i> मराठा शक्ति का उदय</a></li>
 <li><a href="/indian-history/bhakti-sufi-andolan"><i class="fas fa-arrow-right"></i> भक्ति आंदोलन और सूफी आंदोलन</a></li>
 <li><a href="/indian-history/madhyakalin-bharat-sanskriti"><i class="fas fa-arrow-right"></i> मध्यकालीन भारत का समाज और संस्कृति</a></li>
 <li><a href="/indian-history/angrezo-ka-agman"><i class="fas fa-arrow-right"></i> अंग्रेजों का भारत आगमन</a></li>
@@ -2078,5 +2092,4 @@
 </body>
 
 </html>
-
 
