@@ -320,12 +320,12 @@
   <priority>0.70</priority>
 </url>
       <url>
-  <loc>https://examseries.in/indian-history/sabhyata/lothal.html</loc>
+  <loc>https://examseries.in/indian-history/sabhyata/lothal</loc>
 <lastmod>2025-10-19T00:28:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
        <url>
-  <loc>https://examseries.in/indian-history/sabhyata/dholavira.html</loc>
+  <loc>https://examseries.in/indian-history/sabhyata/dholavira</loc>
 <lastmod>2025-10-19T01:04:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
@@ -509,6 +509,7 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
 
 
 
