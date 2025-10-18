@@ -326,7 +326,17 @@
 </url>
       <url>
   <loc>https://examseries.in/indian-history/vedic/rigvedic-kal-dharmik-manyatayein</loc>
-<lastmod>2025-10-18T12:49:00+05:30</lastmod>
+<lastmod>2025-10-18T12:48:00+05:30</lastmod>
+  <priority>0.70</priority>
+</url>
+        <url>
+  <loc>https://examseries.in/indian-history/vedic/uttar-vedic-kal</loc>
+<lastmod>2025-10-18T22:46:00+05:30</lastmod>
+  <priority>0.70</priority>
+</url>
+       <url>
+  <loc>https://examseries.in/indian-history/vedic/aary-samaj-vedic-kal</loc>
+<lastmod>2025-10-18T22:47:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
        <url>
@@ -484,6 +494,7 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
 
 
 
