@@ -993,6 +993,197 @@
         flex-direction: column;
     }
 }
+
+ /* Fix for mobile viewport */
+        @media (max-width: 768px) {
+            /* Ensure proper viewport scaling */
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
+            
+            /* Fix container padding for mobile */
+            .container {
+                padding: 0 10px;
+            }
+            
+            /* Fix main content padding */
+            .main-content {
+                padding: 15px;
+                width: 100%;
+                overflow-x: hidden;
+            }
+            
+            /* Fix page layout for mobile */
+            .page-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            /* Fix images to be responsive and centered */
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            /* Fix pre-formatted text for mobile */
+            pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                font-size: 14px;
+                overflow-x: auto;
+                padding: 10px;
+                background: #f8f9fa;
+                border-radius: 5px;
+            }
+            
+            /* Fix table-like content */
+            .table_content {
+                overflow-x: auto;
+                display: block;
+                width: 100%;
+            }
+            
+            /* Fix category cards */
+            .category-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            /* Fix news items */
+            .news-item {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+            
+            /* Fix sidebar widgets */
+            .sidebar-widget {
+                padding: 15px;
+            }
+            
+            /* Fix header for mobile */
+            .header-content {
+                padding: 0 10px;
+            }
+            
+            /* Fix footer for mobile */
+            footer {
+                padding: 30px 0 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            /* Fix download section */
+            .download-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            /* Fix breadcrumb */
+            .breadcrumb {
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+            /* Fix date header */
+            .date-header {
+                padding: 15px;
+            }
+            
+            .date-header h1 {
+                font-size: 20px;
+            }
+            
+            /* Fix category title */
+            .category-title {
+                font-size: 22px;
+            }
+            
+            /* Fix news title */
+            .news-title {
+                font-size: 18px;
+            }
+            
+            /* Fix important points section */
+            .important-points {
+                padding: 15px;
+            }
+            
+            .points-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Fix FAQ section */
+            .faq-section {
+                padding: 15px;
+            }
+            
+            /* Fix selection process */
+            .selection-process h2 {
+                font-size: 20px;
+            }
+            
+            /* Fix mobile menu */
+            .nav-menu {
+                width: 100%;
+                padding: 80px 20px 30px;
+            }
+            
+            /* Ensure content doesn't overflow */
+            * {
+                max-width: 100%;
+            }
+        }
+        
+        /* Additional fixes for very small screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 5px;
+            }
+            
+            .main-content {
+                padding: 10px;
+            }
+            
+            .date-header h1 {
+                font-size: 18px;
+            }
+            
+            .category-title {
+                font-size: 20px;
+            }
+            
+            .news-title {
+                font-size: 16px;
+            }
+            
+            pre {
+                font-size: 12px;
+            }
+            
+            .breadcrumb {
+                font-size: 11px;
+            }
+        }
+        
+        /* Ensure images don't exceed container width */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Fix for pre-formatted text on all devices */
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+		
  .table_content { margin:10px; overflow: hidden; border-radius: 5px; border:1px solid #e4e9f5; } .table_content table { width: 100%; border-collapse: collapse; } .table_content tbody tr, .table_content tbody th{ border-bottom: 1px solid #e4e9f5; transition: background 0.3s; } .table_content tbody tr:last-child{ border:0; } .table_content tbody td, .table_content tbody th{ border-bottom: 1px solid #e4e9f5; border-left: 1px solid #e4e9f5; word-wrap: break-word; padding: 10px 10px; color: #333; line-height:1.5; } .table_content tbody td{ width:50%; } .table_content .Td3 td{ width:25%; } .table_content tbody tr:last-child td, .table_content tbody tr:last-child th { border-bottom: none; } .table_content tbody td:first-child, .table_content tbody th:first-child { border-left: none; } .table_content .td_center{ text-align:center; } .table_content .justify{ text-align:justify; } .td_b_center{ text-align:center; font-weight:bold; }
 
 .selection-process ul {
@@ -1064,6 +1255,8 @@
                 <h1>Daily Current Affairs 21 October 2025 | दैनिक समसामयिकी हिंदी में PDF सहित</h1>
                 <div class="subtitle">Daily Current Affairs 21 October 2025 की सम्पूर्ण दैनिक समसामयिकी हिंदी में। राष्ट्रीय, अंतर्राष्ट्रीय, अर्थव्यवस्था, विज्ञान, खेल और राजस्थान करंट अफेयर्स। सभी प्रतियोगी परीक्षाओं के लिए महत्वपूर्ण।</div>
             </div>
+<p align="center"><img src="https://examseries.in/image/october-2025/october-2025-current-affairs.jpg?v=21" alt="21 अक्टूबर 2025 करेंट अफेयर्स हिंदी PDF Thumbnail"    title="Today’s GK Questions – 21 Oct 2025" style="width:100%; max-width:900px; margin-top:10px;"></p>
+<figcaption align="center">21 October 2025 के टॉप करेंट अफेयर्स PDF फॉर्मेट में पढ़ें।</figcaption></br>
 
 <div class="selection-process">
     <h2>संयुक्त राष्ट्र ने जलवायु परिवर्तन से निपटने के लिए नया रोडमैप जारी किया</h2>
@@ -1154,127 +1347,127 @@
 		</div>
 
             </div>
- 	<h2 class="section-title">RSMSSB VDO Bharti 2025: अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+ 	<h2 class="section-title">21 October 2025 से बनने वाले Current Affairs Questions</h2>
 	<pre style="font-family: Arial, sans-serif; font-size: 16px;">
-	1. CSIR-NIScPR ने 17 अक्टूबर 2025 को कौन सा विशेष दिवस मनाया?
-	a) विश्व स्वास्थ्य दिवस		
-	b) 10वां आयुर्वेद दिवस
-	c) जलवायु परिवर्तन दिवस		
-	d) विज्ञान दिवस
+1. CSIR-NIScPR ने 17 अक्टूबर 2025 को कौन सा विशेष दिवस मनाया?
+a) विश्व स्वास्थ्य दिवस		
+b) 10वां आयुर्वेद दिवस
+c) जलवायु परिवर्तन दिवस		
+d) विज्ञान दिवस
 
-	<b>उत्तर: b) 10वां आयुर्वेद दिवस</b>
+<b>उत्तर: b) 10वां आयुर्वेद दिवस</b>
 
-	2. #SVASTIK पहल का उद्देश्य क्या है?
-	a) जलवायु परिवर्तन पर कार्य करना
-	b) वैज्ञानिक रूप से मान्य सामाजिक पारंपरिक ज्ञान को बढ़ावा देना
-	c) नई तकनीक का विकास करना
-	d) खेल प्रतियोगिताओं का आयोजन
+2. #SVASTIK पहल का उद्देश्य क्या है?
+a) जलवायु परिवर्तन पर कार्य करना
+b) वैज्ञानिक रूप से मान्य सामाजिक पारंपरिक ज्ञान को बढ़ावा देना
+c) नई तकनीक का विकास करना
+d) खेल प्रतियोगिताओं का आयोजन
 
-	<b>उत्तर: b) वैज्ञानिक रूप से मान्य सामाजिक पारंपरिक ज्ञान को बढ़ावा देना</b>
+<b>उत्तर: b) वैज्ञानिक रूप से मान्य सामाजिक पारंपरिक ज्ञान को बढ़ावा देना</b>
 
-	3. डॉ. किशोर पटेल ने आयुर्वेद के किस पहलू पर व्याख्यान दिया?
-	a) जलवायु परिवर्तन के उपाय
-	b) जीवनशैली और तनाव से जुड़ी बीमारियाँ
-	c) तकनीकी नवाचार
-	d) खेल और स्वास्थ्य
+3. डॉ. किशोर पटेल ने आयुर्वेद के किस पहलू पर व्याख्यान दिया?
+a) जलवायु परिवर्तन के उपाय
+b) जीवनशैली और तनाव से जुड़ी बीमारियाँ
+c) तकनीकी नवाचार
+d) खेल और स्वास्थ्य
 
-	<b>उत्तर: b) जीवनशैली और तनाव से जुड़ी बीमारियाँ</b>
+<b>उत्तर: b) जीवनशैली और तनाव से जुड़ी बीमारियाँ</b>
 
-	4. निःशुल्क स्वास्थ्य जांच शिविर का आयोजन किसके लिए किया गया था?
-	a) आम जनता के लिए
-	b) कर्मचारियों के लिए
-	c) बच्चों के लिए
-	d) छात्रों के लिए
+4. निःशुल्क स्वास्थ्य जांच शिविर का आयोजन किसके लिए किया गया था?
+a) आम जनता के लिए
+b) कर्मचारियों के लिए
+c) बच्चों के लिए
+d) छात्रों के लिए
 
-	<b>उत्तर: b) कर्मचारियों के लिए</b>
+<b>उत्तर: b) कर्मचारियों के लिए</b>
 
-	5. इस वर्ष के आयुर्वेद दिवस का विषय क्या था?
-	a) जलवायु परिवर्तन और स्वास्थ्य
-	b) लोगों और पृथ्वी के लिए आयुर्वेद
-	c) आयुर्वेद और योग
-	d) आयुर्वेद और आधुनिक चिकित्सा
+5. इस वर्ष के आयुर्वेद दिवस का विषय क्या था?
+a) जलवायु परिवर्तन और स्वास्थ्य
+b) लोगों और पृथ्वी के लिए आयुर्वेद
+c) आयुर्वेद और योग
+d) आयुर्वेद और आधुनिक चिकित्सा
 
-	<b>उत्तर: b) लोगों और पृथ्वी के लिए आयुर्वेद</b>
+<b>उत्तर: b) लोगों और पृथ्वी के लिए आयुर्वेद</b>
 
-	6. ब्लैक होल की सक्रियताएँ आकाशगंगाओं के विकास को कैसे प्रभावित करती हैं?
-	a) नए तारों के जन्म को बढ़ावा देकर
-	b) नए तारों के जन्म को रोककर
-	c) आकाशगंगा का आकार बढ़ाकर
-	d) आकाशगंगा के रंग को बदलकर
+6. ब्लैक होल की सक्रियताएँ आकाशगंगाओं के विकास को कैसे प्रभावित करती हैं?
+a) नए तारों के जन्म को बढ़ावा देकर
+b) नए तारों के जन्म को रोककर
+c) आकाशगंगा का आकार बढ़ाकर
+d) आकाशगंगा के रंग को बदलकर
 
-	<b>उत्तर: b) नए तारों के जन्म को रोककर</b>
+<b>उत्तर: b) नए तारों के जन्म को रोककर</b>
 
-	7. भारतीय खगोल भौतिकी संस्थान (IIA) के वैज्ञानिकों ने किस चीज़ का अध्ययन किया है?
-	a) ग्रहों की गति
-	b) सक्रिय आकाशगंगा नाभिक (AGN) के गैस बहिर्वाह और रेडियो जेट्स
-	c) सूर्य की रोशनी
-	d) अंतरिक्ष यान की गति
+7. भारतीय खगोल भौतिकी संस्थान (IIA) के वैज्ञानिकों ने किस चीज़ का अध्ययन किया है?
+a) ग्रहों की गति
+b) सक्रिय आकाशगंगा नाभिक (AGN) के गैस बहिर्वाह और रेडियो जेट्स
+c) सूर्य की रोशनी
+d) अंतरिक्ष यान की गति
 
-	<b>उत्तर: b) सक्रिय आकाशगंगा नाभिक (AGN) के गैस बहिर्वाह और रेडियो जेट्स</b>
+<b>उत्तर: b) सक्रिय आकाशगंगा नाभिक (AGN) के गैस बहिर्वाह और रेडियो जेट्स</b>
 
-	8. ब्लैक होल से निकलने वाला विकिरण और रेडियो जेट्स आकाशगंगा के केंद्र से क्या निकालते हैं?
-	a) तारों को
-	b) गैस को	
-	c) धूल को
-	d) ग्रहों को
+8. ब्लैक होल से निकलने वाला विकिरण और रेडियो जेट्स आकाशगंगा के केंद्र से क्या निकालते हैं?
+a) तारों को
+b) गैस को	
+c) धूल को
+d) ग्रहों को
 
-	<b>उत्तर: b) गैस को</b>
+<b>उत्तर: b) गैस को</b>
 
-	9. आकाशगंगा के विकास को नियंत्रित करने वाले गैस बहिर्वाह की उच्चतम गति लगभग कितनी है?
-	a) 500 किलोमीटर प्रति सेकंड
-	b) 1,000 किलोमीटर प्रति सेकंड
-	c) 2,000 किलोमीटर प्रति सेकंड
-	d) 5,000 किलोमीटर प्रति सेकंड
+9. आकाशगंगा के विकास को नियंत्रित करने वाले गैस बहिर्वाह की उच्चतम गति लगभग कितनी है?
+a) 500 किलोमीटर प्रति सेकंड
+b) 1,000 किलोमीटर प्रति सेकंड
+c) 2,000 किलोमीटर प्रति सेकंड
+d) 5,000 किलोमीटर प्रति सेकंड
 
-	<b>उत्तर: c) 2,000 किलोमीटर प्रति सेकंड</b>
+<b>उत्तर: c) 2,000 किलोमीटर प्रति सेकंड</b>
 
-	10. नकारात्मक AGN फीडबैक सिद्धांत क्या कहता है?
-	a) ब्लैक होल तारे बनाते हैं
-	b) ब्लैक होल की गतिविधियाँ आकाशगंगा में नए तारों के निर्माण को रोकती हैं
-	c) आकाशगंगा का आकार बढ़ता है
-	d) रेडियो जेट्स तारे बनाते हैं
+10. नकारात्मक AGN फीडबैक सिद्धांत क्या कहता है?
+a) ब्लैक होल तारे बनाते हैं
+b) ब्लैक होल की गतिविधियाँ आकाशगंगा में नए तारों के निर्माण को रोकती हैं
+c) आकाशगंगा का आकार बढ़ता है
+d) रेडियो जेट्स तारे बनाते हैं
 
-	<b>उत्तर: b) ब्लैक होल की गतिविधियाँ आकाशगंगा में नए तारों के निर्माण को रोकती हैं</b>
+<b>उत्तर: b) ब्लैक होल की गतिविधियाँ आकाशगंगा में नए तारों के निर्माण को रोकती हैं</b>
 
-	11. पुलिस स्मृति दिवस कब मनाया गया?
-	a) 20 अक्टूबर 2025
-	b) 21 अक्टूबर 2025
-	c) 22 अक्टूबर 2025
-	d) 23 अक्टूबर 2025
+11. पुलिस स्मृति दिवस कब मनाया गया?
+a) 20 अक्टूबर 2025
+b) 21 अक्टूबर 2025
+c) 22 अक्टूबर 2025
+d) 23 अक्टूबर 2025
 
-	<b>उत्तर: b) 21 अक्टूबर 2025</b>
+<b>उत्तर: b) 21 अक्टूबर 2025</b>
 
-	12. रक्षा मंत्री राजनाथ सिंह ने किस स्थान पर शहीद पुलिसकर्मियों को श्रद्धांजलि दी?
-	a) इंडिया गेट
-	b) राष्ट्रीय पुलिस स्मारक
-	c) लाल किला
-	d) संसद भवन
+12. रक्षा मंत्री राजनाथ सिंह ने किस स्थान पर शहीद पुलिसकर्मियों को श्रद्धांजलि दी?
+a) इंडिया गेट
+b) राष्ट्रीय पुलिस स्मारक
+c) लाल किला
+d) संसद भवन
 
-	<b>उत्तर: b) राष्ट्रीय पुलिस स्मारक</b>
+<b>उत्तर: b) राष्ट्रीय पुलिस स्मारक</b>
 
-	13. 1959 में लद्दाख के हॉट स्प्रिंग्स में शहीद हुए कितने पुलिसकर्मी थे?
-	a) 5
-	b) 10
-	c) 15
-	d) 20
+13. 1959 में लद्दाख के हॉट स्प्रिंग्स में शहीद हुए कितने पुलिसकर्मी थे?
+a) 5
+b) 10
+c) 15
+d) 20
 
-	<b>उत्तर: b) 10</b>
+<b>उत्तर: b) 10</b>
 
-	14. रक्षा मंत्री ने किस वर्ष तक विकसित भारत के लक्ष्य की बात की?
-	a) 2030
-	b) 2047
-	c) 2050
-	d) 2060
+14. रक्षा मंत्री ने किस वर्ष तक विकसित भारत के लक्ष्य की बात की?
+a) 2030
+b) 2047
+c) 2050
+d) 2060
 
-	<b>उत्तर: b) 2047</b>
+<b>उत्तर: b) 2047</b>
 
-	15. पुलिस बल के आधुनिकीकरण में निम्नलिखित में से कौन-सी तकनीक शामिल नहीं है?
-	a) ड्रोन
-	b) फोरेंसिक लैब
-	c) डिजिटल पुलिसिंग
-	d) परमाणु ऊर्जा
+15. पुलिस बल के आधुनिकीकरण में निम्नलिखित में से कौन-सी तकनीक शामिल नहीं है?
+a) ड्रोन
+b) फोरेंसिक लैब
+c) डिजिटल पुलिसिंग
+d) परमाणु ऊर्जा
 
-	<b>उत्तर: d) परमाणु ऊर्जा</b>
+<b>उत्तर: d) परमाणु ऊर्जा</b>
 </pre>
 
         </div>
