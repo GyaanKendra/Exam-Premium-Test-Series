@@ -168,7 +168,7 @@
           "@type": "ItemList",
           "name": "Upcoming Rajasthan Government Exams 2024-25",
           "description": "List of all upcoming Rajasthan government job exams with dates and notifications",
-          "url": "https://www.examseries.in/exams/rajasthan-exams#upcoming-exams",
+          "url": "https://www.examseries.in/exams/rajasthan-exams",
           "numberOfItems": 15,
           "itemListElement": [
             {
@@ -245,15 +245,10 @@
               "name": "Home",
               "item": "https://www.examseries.in/"
             },
+            
             {
               "@type": "ListItem",
-              "position": 2, 
-              "name": "Exams",
-              "item": "https://www.examseries.in/exams"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
+              "position": 2,
               "name": "Rajasthan Exams",
               "item": "https://www.examseries.in/exams/rajasthan-exams"
             }
@@ -459,20 +454,20 @@
         
         /* Hero Section */
         .hero {
-      padding: 80px 0;
+      padding: 20px 0;
       text-align: center;
       background: linear-gradient(135deg, rgba(74, 20, 140, 0.9), rgba(123, 31, 162, 0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center;
       background-size: cover;
       position: relative;
       color: white;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       overflow: hidden;
     }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 850px;
+            max-width: 950px;
             margin: 0 auto;
             animation: fadeIn 1s ease;
         }
@@ -509,7 +504,7 @@
         .main-content {
             display: flex;
             gap: 30px;
-            padding: 40px 0;
+            padding: 5px 0;
         }
         
         .content-area {
@@ -1127,6 +1122,48 @@
 .share-social-links i {
     color: inherit;
 }
+
+/* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .download-btn {
+            background: white;
+            color: #ff7e5f;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+/* Fix download section */
+            .download-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+
     </style>
     
 </head>
@@ -1168,15 +1205,6 @@
                 <h2>Rajasthan Exams — Notifications, Syllabus & Apply</h2>
                 <p>Complete guide for Rajasthan government jobs — RPSC, RAS, RSMSSB, CET, Police Bharti, Patwari, Gram Sevak, Teacher Bharti. यहाँ latest notification, syllabus, exam pattern, admit card और  official links मिलेंगे।</p>
 
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <i class="fas fa-download"></i> Download Syllabus
-                    </button>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-book-open"></i> Free Mock Test
-                    </button>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1236,7 +1264,14 @@
                             <p><strong>आवेदन तिथि:</strong> 09 अगस्‍त, 2024</p>
                             <p><strong>परीक्षा तिथि:</strong> 27-28 सितम्‍बर, 2024</p>
                             <button class="btn btn-primary" onclick="window.open('cet-graduation/cet-graduation-2024', '_blank')">   विस्तृत जानकारी</button>
-                        </div>
+                        </div>  
+
+ <!-- Download Section - Middle of Content -->
+               <div class="download-section">
+    <strong>📥 Free Test Serires Join करें!   </strong>
+    <a href="../../free-test-series/all-free-test-series.html" target="_blank" style="text-decoration: none; color: inherit;">
+        <button class="download-btn">⬇️ Download Now</button>   </a></div>
+
 		 <div class="exam-card">
                             <h4>CET (Senior Secondary Level) 2024</h4>             
                             <p>Rajasthan Staff Selection Board (RSSB)Exam</p>
@@ -1265,6 +1300,12 @@
                             <p><strong>परीक्षा तिथि:</strong> 27 जुलाई, 2025</p>
                            <button class="btn btn-primary" onclick="window.open('librarian/librarian-grade-iii-2024', '_blank')">   विस्तृत जानकारी</button>
                         </div>
+ <!-- Download Section - Middle of Content -->
+               <div class="download-section">
+    <strong>📥 Latest Current Affairs के लिए Click करें!   </strong>
+    <a href="../../current-affairs/october-2025/daily-current-affairs-22-october-2025" target="_blank" style="text-decoration: none; color: inherit;">
+        <button class="download-btn">⬇️ Click here</button>   </a></div>
+
 		<div class="exam-card">
                             <h4>Animal Attendant 2023</h4>
                             <p>RSMSSB Animal Attendant Exam</p>
@@ -1309,11 +1350,13 @@
                             <p><strong>परीक्षा तिथि:Forester</strong> 06 नवम्‍बर, 2022</p>
                             <p><strong>परीक्षा तिथि:Forest Guard</strong> 12 नवम्‍बर, 2022</p>
                            <button class="btn btn-primary" onclick="window.open('forester-forest-guard/forester-forest-guard-2020', '_blank')">   विस्तृत जानकारी</button>
-                        </div>                    
-                        
-
-                    </div> </div></section></br></br>
-
+                        </div>   
+                    </div> </div></section>
+<!-- Download Section - Middle of Content -->
+               <div class="download-section">
+    <strong>⬇️ Complete Notes Download करनें के लिए Telegram Join करें।</strong>
+    <a href="https://t.me/share/url?url=https://www.examseries.in/rajasthan-exams&text=Rajasthan Competitive Exams Guide" target="_blank" style="text-decoration: none; color: inherit;">
+        <button class="download-btn">⬇️ Click here</button>   </a></div>
           
                <!--- <h1 class="page-title">SSC Exams Information</h1>
 		<section class="container">
@@ -1344,13 +1387,9 @@
                            <button class="btn btn-primary" onclick="window.open('#', '_blank')">   विस्तृत जानकारी</button>
                         </div>
 			
-                    </div> </div></section></br></br>-->
+                    </div> </div></section>-->
 
  
-            
-            
-
-
 <!-- FAQ Section -->
   <section class="faq">
     <div class="container"> 
@@ -1468,13 +1507,19 @@
                
                 
               <div class="sidebar-card">
-                    <h3>Rajasthan Test Series 2024</h3>
-                    <p>Get access to specialized practice tests for Rajasthan government exams with detailed solutions and performance analysis.</p>
-                    <button class="btn btn-primary">Enroll Now</button>
-                </div></br>
-                
+    <h3>Download Indian History FREE Notes</h3>
+    <p>Rajasthan की सभी परीक्षाओं के <strong>FREE Notes</strong> यहां से download किये जा सकते हैं।</p>
+    <a href="../../indian-history" class="btn btn-primary" style="text-decoration: none;">Download Now</a>
+</div>
+<br>
+            <div class="sidebar-card">
+    <h3>Download Rajasthan History FREE Notes</h3>
+    <p>Rajasthan की सभी परीक्षाओं के <strong>FREE Notes</strong> यहां से download किये जा सकते हैं।</p>
+    <a href="../../rajasthan-history/rajasthan-praachin-itihas.html" class="btn btn-primary" style="text-decoration: none;">Download Now</a>
+</div>
+<br>     
                 <div class="sidebar-section">
-                    <h3><i class="fas fa-share-alt"></i> Share This Guide</h3>
+                    <h3><i class="fas fa-share-alt"></i> Share This Page</h3>
                     <div class="share-social-links">
                         <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.examseries.in/rajasthan-exams" title="Share on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://api.whatsapp.com/send?text=Check out this comprehensive guide for Rajasthan competitive exams 2024-25: https://www.examseries.in/rajasthan-exams" title="Share on WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -1494,7 +1539,7 @@
                     <h3>ExamSeries</h3>
                     <p>Your trusted partner for competitive exam preparation. We provide high-quality test series and study material.</p>
                     <div class="social-links">
-                        <a href="#" title="ExamSeries Facebook Channel"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/examseriesofficial" title="ExamSeries Facebook Channel"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://whatsapp.com/channel/0029VbBFyR44yltOjV8QC23N" title="ExamSeries Whatsapp Channel"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/exameseries?igsh=Mmk5dGFyMHJpbWJp" title="ExamSeries Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://t.me/exameseries" title="ExamSeries Telegram Channel"><i class="fab fa-telegram"></i></a>
@@ -1631,13 +1676,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
