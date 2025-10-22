@@ -130,6 +130,11 @@
     <changefreq>monthly</changefreq>
   <priority>0.40</priority>
 </url>
+      <url>
+  <loc>https://examseries.in/rajasthan-history</loc>
+<lastmod>2025-10-22T20:12:00+05:30</lastmod>
+  <priority>0.60</priority>
+</url>
 <url>
   <loc>https://examseries.in/rajasthan-history/rajasthan-praachin-itihas</loc>
 <lastmod>2025-10-10T21:55:00+05:30</lastmod>
@@ -538,6 +543,7 @@
   <priority>0.60</priority>
 </url>
 </urlset>
+
 
 
 
