@@ -185,6 +185,7 @@
         
         html, body {
             overflow-x: hidden;
+		
         }
         
        body {
@@ -470,12 +471,12 @@
       .nav-menu {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 300px;
-  height: 100vh;
+  right: 0px;
+  width: 280px;
+  height: 60vh;
   background: var(--primary);
   flex-direction: column;
-  padding: 100px 30px 30px;
+  padding: 80px 20px 30px;
   transform: translateX(100%);
   transition: transform 0.3s ease;
   z-index: 1000;
@@ -981,8 +982,6 @@
                 font-size: 18px;
             }
         }
-        
-    
     
 .page-layout {
     display: flex;
@@ -1003,6 +1002,219 @@
         flex-direction: column;
     }
 }
+
+   /* Fix for mobile viewport */
+        @media (max-width: 768px) {
+            /* Ensure proper viewport scaling */
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
+            
+            /* Fix container padding for mobile */
+            .container {
+                padding: 0 10px;
+            }
+            
+            /* Fix main content padding */
+            .main-content {
+                padding: 15px;
+                width: 100%;
+                overflow-x: hidden;
+            }
+            
+            /* Fix page layout for mobile */
+            .page-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            /* Fix images to be responsive and centered */
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            /* Fix pre-formatted text for mobile */
+            pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                font-size: 14px;
+                overflow-x: auto;
+                padding: 10px;
+                background: #f8f9fa;
+                border-radius: 5px;
+            }
+            
+            /* Fix table-like content */
+            .table_content {
+                overflow-x: auto;
+                display: block;
+                width: 100%;
+            }
+            
+            /* Fix category cards */
+            .category-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            /* Fix news items */
+            .news-item {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+            
+            /* Fix sidebar widgets */
+            .sidebar-widget {
+                padding: 15px;
+            }
+            
+            /* Fix header for mobile */
+            .header-content {
+                padding: 0 10px;
+            }
+            
+            /* Fix footer for mobile */
+            footer {
+                padding: 30px 0 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            /* Fix download section */
+            .download-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            /* Fix breadcrumb */
+            .breadcrumb {
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+            /* Fix date header */
+            .date-header {
+                padding: 15px;
+            }
+            
+            .date-header h1 {
+                font-size: 20px;
+            }
+            
+            /* Fix category title */
+            .category-title {
+                font-size: 22px;
+            }
+            
+            /* Fix news title */
+            .news-title {
+                font-size: 18px;
+            }
+            
+            /* Fix important points section */
+            .important-points {
+                padding: 15px;
+            }
+            
+            .points-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Fix FAQ section */
+            .faq-section {
+                padding: 15px;
+            }
+            
+            /* Fix selection process */
+            .selection-process h2 {
+                font-size: 20px;
+            }
+            
+            /* Fix mobile menu */
+            .nav-menu {
+                width: 100%;
+                padding: 80px 20px 30px;
+            }
+            
+            /* Ensure content doesn't overflow */
+            * {
+                max-width: 100%;
+            }
+        }
+        
+        /* Additional fixes for very small screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 5px;
+            }
+            
+            .main-content {
+                padding: 10px;
+            }
+            
+            .date-header h1 {
+                font-size: 18px;
+            }
+            
+            .category-title {
+                font-size: 20px;
+            }
+            
+            .news-title {
+                font-size: 16px;
+            }
+            
+            pre {
+                font-size: 12px;
+            }
+            
+            .breadcrumb {
+                font-size: 11px;
+            }
+        }
+        
+        /* Ensure images don't exceed container width */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Fix for pre-formatted text on all devices */
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  .table_content { margin:10px; overflow: hidden; border-radius: 5px; border:1px solid #e4e9f5; } .table_content table { width: 100%; border-collapse: collapse; } .table_content tbody tr, .table_content tbody th{ border-bottom: 1px solid #e4e9f5; transition: background 0.3s; } .table_content tbody tr:last-child{ border:0; } .table_content tbody td, .table_content tbody th{ border-bottom: 1px solid #e4e9f5; border-left: 1px solid #e4e9f5; word-wrap: break-word; padding: 10px 10px; color: #333; line-height:1.5; } .table_content tbody td{ width:50%; } .table_content .Td3 td{ width:25%; } .table_content tbody tr:last-child td, .table_content tbody tr:last-child th { border-bottom: none; } .table_content tbody td:first-child, .table_content tbody th:first-child { border-left: none; } .table_content .td_center{ text-align:center; } .table_content .justify{ text-align:justify; } .td_b_center{ text-align:center; font-weight:bold; }
 
 .selection-process ul {
@@ -1410,8 +1622,7 @@
 
                 </div>
             </div>
-
-
+    
 
 
             <!-- Rajasthan GK Links -->
@@ -1476,10 +1687,10 @@
                     <a href="#" class="category-link">प्रतियोगी परीक्षाएं</a>
                     <a href="#" class="category-link">स्टडी मटेरियल</a>
                     <a href="#" class="category-link">मॉक टेस्ट</a>-->
-                </div>
-            </div>
-        </div>
-
+                	</div>
+            	     </div>
+        	</div>
+	</div>
     </div>
     <!-- Footer -->
     <footer>
