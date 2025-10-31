@@ -480,7 +480,11 @@
 <lastmod>2025-10-14T22:57:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
-
+ <url>
+  <loc>https://examseries.in/indian-geography</loc>
+<lastmod>2025-11-01T00:09:00+05:30</lastmod>
+  <priority>0.70</priority>
+</url>
  <url>
   <loc>https://examseries.in/indian-geography/bharat-bhugol-parichay</loc>
 <lastmod>2025-10-16T22:52:00+05:30</lastmod>
@@ -496,7 +500,11 @@
 <lastmod>2025-10-10T21:53:00+05:30</lastmod>
   <priority>0.70</priority>
 </url>
-
+ <url>
+  <loc>https://examseries.in/indian-polity</loc>
+<lastmod>2025-11-01T00:08:00+05:30</lastmod>
+  <priority>0.70</priority>
+</url>
     <url>
   <loc>https://examseries.in/indian-polity/bharat-ka-samvidhan</loc>
 <lastmod>2025-10-12T23:28:00+05:30</lastmod>
@@ -615,6 +623,7 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
 
 
 
