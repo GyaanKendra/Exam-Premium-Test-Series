@@ -1047,6 +1047,115 @@
             height: 100%;
             border: none;
         }
+        .sidebar-card {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .sidebar-card h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-card .btn {
+            margin-top: 15px;
+            width: 100%;
+        }
+        .premium-exam-links {
+            list-style: none;
+        }
+        
+        .premium-exam-links li {
+            margin-bottom: 12px;
+        }
+        
+        .premium-exam-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: var(--off-white);
+            transition: all 0.3s;
+        }
+        
+        .premium-exam-links a:hover {
+            background: var(--light);
+            transform: translateX(5px);
+        }
+        
+        .premium-exam-links i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        /* Sidebar Styles */
+        .sidebar-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-section h3 i {
+            color: var(--accent);
+        }
+        
+        .sidebar-list {
+            list-style: none;
+        }
+        
+        .sidebar-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .sidebar-list li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .sidebar-card {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .sidebar-card h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-card .btn {
+            margin-top: 15px;
+            width: 100%;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -1761,6 +1870,34 @@
                          <a href="../exams/rajasthan-exams" class="tag">प्रतियोगी परीक्षा</a>
                     </div>
                 </div>
+ <!-- Premium Card -->
+		<div class="sidebar-card">
+                    <h3> Indian History FREE Notes</h3>
+                    <p>Indian History Notes Free में Download करें!</p>
+                    <a href="../indian-history" class="btn btn-primary" target="_blank" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-crown"></i> Download Here</a>
+            </div>
+                <div class="sidebar-card">
+                    <h3> Indian Geography FREE Notes</h3>
+                    <p>Indian Geography Notes Free में Download करें!</p>
+                    <a href="../indian-geography" class="btn btn-primary" target="_blank" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-crown"></i> Download Here</a>
+                </div>
+                 <div class="sidebar-card">
+                    <h3> Indian Polity FREE Notes</h3>
+                    <p>Indian Polity Notes Free में Download करें!</p>
+                    <a href="../indian-polity" class="btn btn-primary" target="_blank" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-crown"></i> Download Here</a>
+                </div><br>
+<div class="sidebar-section">
+                    <h3><i class="fas fa-link"></i> संबंधित पेज</h3>
+                   <ul class="premium-exam-links">
+                        <li><a href="../rajasthan-history" style="text-decoration: none; color: inherit;">राजस्थान इतिहास</a></li>
+                        <li><a href="../rajasthan-geography" style="text-decoration: none; color: inherit;">राजस्थान भूगोल</a></li>
+                        <li><a href="../rajasthan-culture" style="text-decoration: none; color: inherit;">राजस्थान कला एवं संस्कृति</a></li>
+                        <li><a href="../rajasthan-polity" style="text-decoration: none; color: inherit;">राजस्थान राजव्‍यवस्‍था</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -1796,8 +1933,6 @@
                         <li><a href="../Hindi/hindimain.html"><i class="fas fa-arrow-right"></i> Hindi Master Series</a></li>
                     </ul>
                 </div>
-                
-               
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
@@ -1946,6 +2081,3 @@
 </body>
 
 </html>
-
-
-
