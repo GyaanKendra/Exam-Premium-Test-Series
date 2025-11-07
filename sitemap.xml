@@ -4,7 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
 <url>
   <loc>https://examseries.in/</loc>
 <lastmod>2025-10-13T00:01:00+05:30</lastmod>
@@ -685,3 +684,4 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
