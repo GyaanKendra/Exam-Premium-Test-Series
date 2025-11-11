@@ -1780,22 +1780,24 @@ Explanation:
 </pre>       </div>
 
         
- <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Date Navigation -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">📅 पिछले दिनों के करंट अफेयर्स</h3>
-                <ul class="date-list">
-			<li><a href="daily-current-affairs-8-november-2025"><span>📆</span> 08 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-7-november-2025"><span>📆</span> 07 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-6-november-2025"><span>📆</span> 06 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-5-november-2025"><span>📆</span> 05 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-4-november-2025"><span>📆</span> 04 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-3-november-2025"><span>📆</span> 03 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-2-november-2025"><span>📆</span> 02 नवम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-1-november-2025"><span>📆</span> 01 नवम्‍बर  2025</a></li>
-                </ul>
-            </div>
+<div class="sidebar">
+    <!-- Date Navigation -->
+    <div class="sidebar-widget">
+        <h3 class="widget-title">📅 पिछले दिनों के करंट अफेयर्स</h3>
+        <ul id="date-list" class="date-list">
+            <li><a href="daily-current-affairs-11-november-2025.html"><span>📆</span> 11 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-10-november-2025.html"><span>📆</span> 10 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-9-november-2025.html"><span>📆</span> 09 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-8-november-2025.html"><span>📆</span> 08 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-7-november-2025.html"><span>📆</span> 07 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-6-november-2025.html"><span>📆</span> 06 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-5-november-2025.html"><span>📆</span> 05 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-4-november-2025.html"><span>📆</span> 04 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-3-november-2025.html"><span>📆</span> 03 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-2-november-2025.html"><span>📆</span> 02 नवम्‍बर 2025</a></li>
+            <li><a href="daily-current-affairs-1-november-2025.html"><span>📆</span> 01 नवम्‍बर 2025</a></li>
+        </ul>
+    </div>
 <div class="sidebar">
             <!-- Date Navigation -->
             <div class="sidebar-widget">
@@ -2009,5 +2011,42 @@ Explanation:
             });
         });
     </script>
+	<script>
+// JavaScript to generate remaining dates for November (12th to 30th)
+window.onload = function() {
+    var ul = document.getElementById('date-list');
+    var currentYear = new Date().getFullYear(); // Get the current year
+    var currentMonth = 11; // November (month is 0-indexed, so 11 is November)
+
+    // Function to check if the file exists
+    function fileExists(dateString) {
+        return fetch(`daily-current-affairs-${dateString}.html`)
+            .then(response => response.ok)
+            .catch(() => false);
+    }
+
+    // Loop to add dates from 12th to 30th November
+    var startDay = 12;
+    var endDay = 30;
+    for (var day = startDay; day <= endDay; day++) {
+        var dateString = `${currentYear}-${currentMonth < 10 ? '0' : ''}${currentMonth}-${day < 10 ? '0' : ''}${day}`;
+        var dateText = `${day} नवम्‍बर  ${currentYear}`;
+
+        // Check if the file exists before adding to the list
+        fileExists(dateString).then(exists => {
+            if (exists) {
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.href = `daily-current-affairs-${dateString}.html`;
+                a.innerHTML = `<span>📆</span> ${dateText}`;
+                
+                // Insert the new list item at the top
+                ul.insertBefore(li, ul.firstChild);
+                li.appendChild(a); // Add the anchor to the list item
+            }
+        });
+    }
+};
+</script>
 </body>
 </html>
