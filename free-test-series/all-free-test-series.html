@@ -872,8 +872,8 @@
       }
     }
 
-	  /*slider*/
-	  /* Slider container */
+	  /* Basic Reset */
+/* Slider container */
 .slider-container {
     position: relative;
     width: 100%;
@@ -940,6 +940,7 @@ img {
         padding: 10px; /* Adjust padding for mobile */
     }
 }
+
   </style>
 	<script type="application/ld+json">
 {
@@ -1169,13 +1170,13 @@ img {
 <div class="slider-container">
         <div class="slider">
             <div class="slide">
-                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-1.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join">
+                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-1.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join" style="width:100%; max-width:700px; margin-top:10px;">
             </div>
             <div class="slide">
-                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-2.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join">
+                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-2.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join" style="width:100%; max-width:700px; margin-top:10px;">
             </div>
             <div class="slide">
-                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-3.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join">
+                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-3.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join" style="width:100%; max-width:700px; margin-top:10px;">
             </div>
             <!-- Add more slides as needed -->
         </div>
@@ -1924,7 +1925,7 @@ img {
     // Check on window resize
     window.addEventListener('resize', checkArrowVisibility);
 
-	  let currentSlide = 0;
+let currentSlide = 0;
 
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
@@ -1944,7 +1945,7 @@ function changeSlide(direction) {
 
 function updateSliderPosition() {
     const slider = document.querySelector('.slider');
-    slider.style.transform = translateX(-${currentSlide * 100}%);
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
 // Auto-slide every 5 seconds
@@ -1954,4 +1955,3 @@ setInterval(() => {
   </script>
 </body>
 </html>
-
