@@ -10,7 +10,7 @@
 <meta property="og:locale" content="hi_IN" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Free Test Series | राजस्थान & India - ExamSeries" />
-<meta property="og:description" content="मुफ्त मॉक टेस्ट: Patwari, REET, SSC, Banking, CTET और बहुत से राज्य/केंद्रीय परीक्षाओं के लिए। विस्तृत हल और परफॉरमेंस रिपोर्ट।" />
+<meta property="og:description" content="Free mock test : UPSC, RPSC, RAS, Patwari, REET, SSC, Banking, CTET और बहुत से राज्य/केंद्रीय परीक्षाओं के लिए। विस्तृत हल और परफॉरमेंस रिपोर्ट।" />
 <meta property="og:url" content="https://examseries.in/free-test-series/all-free-test-series.html" />
 <meta property="og:site_name" content="ExamSeries" />
 <meta property="og:image" content="https://examseries.in/assets/images/free-test-series-og.jpg" />
@@ -871,6 +871,75 @@
         font-size: 14px;
       }
     }
+
+	  /*slider*/
+	  /* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Max width for large screens */
+    margin: auto; /* This will center the slider container */
+    overflow: hidden;
+}
+
+/* Slider itself, flex container to handle slides */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    align-items: center; /* Vertically center the slides */
+}
+
+/* Each slide should take full container width and be centered */
+.slide {
+    min-width: 100%;  /* Each slide takes 100% of the container width */
+    display: flex;
+    justify-content: center;  /* Horizontally center the image */
+}
+
+/* Images inside slides */
+img {
+    width: 100%; /* Make image responsive to container width */
+    height: auto;
+    display: block; /* Removes space below image */
+    border-radius: 10px; /* Optional: Rounded corners for a premium look */
+}
+
+/* Navigation arrows (Previous and Next buttons) */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+/* Styling for navigation arrows */
+.prev, .next {
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for arrows */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive settings for smaller screens */
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 100%; /* Full width on mobile devices */
+    }
+    .prev, .next {
+        font-size: 24px; /* Smaller size for arrows on mobile */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+}
   </style>
 	<script type="application/ld+json">
 {
@@ -1173,7 +1242,26 @@
       </div>
     </div>
   </section>
+<div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-1.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join">
+            </div>
+            <div class="slide">
+                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-2.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join">
+            </div>
+            <div class="slide">
+                <img src="https://gyaankendra.github.io/images/november/free-competitive-exams-test-series-2025-3.jpeg" alt="Latest FREE Test Series 2025" title="FREE Test Series Join">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+        <div class="slider-nav">
+            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+        </div>
+    </div>
 
+	
   <!-- Test Series Section -->
   <section class="container">
     <h2 class="section-title">Our Free Test Series</h2>
@@ -1835,20 +1923,34 @@
     
     // Check on window resize
     window.addEventListener('resize', checkArrowVisibility);
+
+	  let currentSlide = 0;
+
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function changeSlide(direction) {
+    currentSlide += direction;
+
+    // Loop back to the start or end
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    updateSliderPosition();
+}
+
+function updateSliderPosition() {
+    const slider = document.querySelector('.slider');
+    slider.style.transform = translateX(-${currentSlide * 100}%);
+}
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
