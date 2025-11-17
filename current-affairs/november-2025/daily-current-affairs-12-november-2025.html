@@ -2550,42 +2550,39 @@ Q20 Explanation:
             });
         });
     </script>
-	<script>
-// JavaScript to generate remaining dates for November (12th to 30th)
-window.onload = function() {
-    var ul = document.getElementById('date-list');
-    var currentYear = new Date().getFullYear(); // Get the current year
-    var currentMonth = 11; // November (month is 0-indexed, so 11 is November)
+<script>
+    window.onload = function() {
+        var ul = document.getElementById('date-list');
+        var currentYear = 2025; // Ya dynamically: new Date().getFullYear()
+        var monthName = "november"; // File naming me lowercase English month
+        var startDay = 12;
+        var endDay = 30;
 
-    // Function to check if the file exists
-    function fileExists(dateString) {
-        return fetch(`daily-current-affairs-${dateString}.html`)
-            .then(response => response.ok)
-            .catch(() => false);
-    }
+        for (let day = startDay; day <= endDay; day++) {
+            // Text to display in Hindi
+            let dateText = `${day} नवम्बर ${currentYear}`;
+            // File name according to your convention
+            let fileName = `daily-current-affairs-${day}-${monthName}-${currentYear}.html`;
 
-    // Loop to add dates from 12th to 30th November
-    var startDay = 12;
-    var endDay = 30;
-    for (var day = startDay; day <= endDay; day++) {
-        var dateString = `${currentYear}-${currentMonth < 10 ? '0' : ''}${currentMonth}-${day < 10 ? '0' : ''}${day}`;
-        var dateText = `${day} नवम्‍बर  ${currentYear}`;
-
-        // Check if the file exists before adding to the list
-        fileExists(dateString).then(exists => {
-            if (exists) {
-                var li = document.createElement('li');
-                var a = document.createElement('a');
-                a.href = `daily-current-affairs-${dateString}.html`;
-                a.innerHTML = `<span>📆</span> ${dateText}`;
-                
-                // Insert the new list item at the top
-                ul.insertBefore(li, ul.firstChild);
-                li.appendChild(a); // Add the anchor to the list item
-            }
-        });
-    }
-};
-</script>
+            // Check if file exists
+            fetch(fileName)
+                .then(response => {
+                    if (response.ok) {
+                        // Create <li> and <a>
+                        let li = document.createElement('li');
+                        let a = document.createElement('a');
+                        a.href = fileName;
+                        a.innerHTML = `<span>📆</span> ${dateText}`;
+                        // Insert at the top of the list
+                        ul.insertBefore(li, ul.firstChild);
+                        li.appendChild(a);
+                    }
+                })
+                .catch(() => {
+                    // File missing, do nothing
+                });
+        }
+    };
+    </script>
 </body>
 </html>
