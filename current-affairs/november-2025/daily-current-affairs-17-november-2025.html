@@ -1648,6 +1648,48 @@
                 font-size: 13px;
             }
         }
+
+/*image last*/
+	  .image-container {
+    display: flex;
+    flex-wrap: wrap;            /* Wrap kare images ko */
+    gap: 15px;
+    justify-content: center;
+    max-width: 100vw;           /* Screen se zyada na phaila */
+    overflow-x: hidden;         /* Horizontal scroll hatao */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.image-link {
+    flex: 1 1 100%;              /* Base width 45%, grow/shrink kare */
+    max-width: 300px;           /* Max width limit */
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.responsive-image {
+    width: 100%;                /* Container ke andar poori width le */
+    height: auto;               /* Aspect ratio maintain ho */
+    display: block;
+}
+
+/* Mobile ke liye */
+@media (max-width: 768px) {
+    .image-link {
+        flex-basis: 100%;       /* Mobile par ek line me ek image */
+        max-width: 75%;
+    }
+}
     </style>
 
 
@@ -2157,6 +2199,7 @@ Explanation:
                 <h3 class="widget-title">📅 पिछले दिनों के करंट अफेयर्स</h3>
                 <ul class="date-list">
 			<li><a href="daily-current-affairs-17-november-2025"><span>📆</span> 17 नवम्‍बर  2025</a></li>
+			<li><a href="daily-current-affairs-16-november-2025"><span>📆</span> 16 नवम्‍बर  2025</a></li>
 			<li><a href="daily-current-affairs-15-november-2025"><span>📆</span> 15 नवम्‍बर  2025</a></li>
 			<li><a href="daily-current-affairs-14-november-2025"><span>📆</span> 14 नवम्‍बर  2025</a></li>
 			<li><a href="daily-current-affairs-13-november-2025"><span>📆</span> 13 नवम्‍बर  2025</a></li>
@@ -2254,6 +2297,36 @@ Explanation:
 		<a href="../../../indian-polity/mool-kartavya" class="category-link">मौलिक कर्तव्य</a>
                 </div>
             </div>
+
+<div class="sidebar-widget">
+                <h3 class="widget-title"> Rajasthan FREE Notes</h3>
+<div class="image-container">
+    <a href="../../../rajasthan-history" class="image-link">
+<img src="https://gyaankendra.github.io/images/thumbnail/rajasthan-history-notes.jpg" 
+     alt="Rajasthan History Notes PDF – Complete Study Material for Students" 
+     title="Download Rajasthan History Notes – Detailed PDF for Competitive Exams and School Studies" 
+     class="responsive-image">
+    </a>
+    <a href="../../../rajasthan-polity" class="image-link">
+ <img src="https://gyaankendra.github.io/images/thumbnail/rajasthan-polity-notes.jpg" 
+     alt="Rajasthan Polity Notes PDF – Key Governance and Political Study Material" 
+     title="Download Rajasthan Polity Notes – Complete Guide for Exams and School Studies" 
+     class="responsive-image">
+    </a>
+	 <a href="../../../rajasthan-geography" class="image-link">
+ <img src="https://gyaankendra.github.io/images/thumbnail/rajasthan-geography-notes.jpg" 
+     alt="Rajasthan Geography Notes PDF – Maps, Climate, Rivers, and Terrain Study Material" 
+     title="Download Rajasthan Geography Notes – Complete PDF for School and Competitive Exams" 
+     class="responsive-image">
+    </a>
+<a href="../../../rajasthan-culture" class="image-link">
+<img src="https://gyaankendra.github.io/images/thumbnail/rajasthan-culture-notes.jpg" 
+     alt="Rajasthan Culture Notes PDF – Art, Music, Festivals, Traditions Study Material" 
+     title="Download Rajasthan Culture Notes – Complete PDF on Art, Music, Festivals & Traditions" 
+     class="responsive-image">
+ </a>
+</div></div></div>
+
             <!-- Other Categories -->
          <!---   <div class="sidebar-widget">
                 <h3 class="widget-title">अन्य श्रेणियाँ</h3>
