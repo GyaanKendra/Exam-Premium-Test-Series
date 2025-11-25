@@ -2294,6 +2294,39 @@ Explanation: उन्होंने बताया कि फसल अवश
             });
         });
     </script>
+<script>
+    window.onload = function() {
+        var ul = document.getElementById('date-list');
+        var currentYear = 2025; // Ya dynamically: new Date().getFullYear()
+        var monthName = "november"; // File naming me lowercase English month
+        var startDay = 12;
+        var endDay = 30;
 
+        for (let day = startDay; day <= endDay; day++) {
+            // Text to display in Hindi
+            let dateText = `${day} नवम्बर ${currentYear}`;
+            // File name according to your convention
+            let fileName = `daily-current-affairs-${day}-${monthName}-${currentYear}.html`;
+
+            // Check if file exists
+            fetch(fileName)
+                .then(response => {
+                    if (response.ok) {
+                        // Create <li> and <a>
+                        let li = document.createElement('li');
+                        let a = document.createElement('a');
+                        a.href = fileName;
+                        a.innerHTML = `<span>📆</span> ${dateText}`;
+                        // Insert at the top of the list
+                        ul.insertBefore(li, ul.firstChild);
+                        li.appendChild(a);
+                    }
+                })
+                .catch(() => {
+                    // File missing, do nothing
+                });
+        }
+    };
+    </script>
 </body>
 </html>
