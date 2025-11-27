@@ -237,6 +237,12 @@
    <changefreq>weekly</changefreq>
   <priority>0.70</priority>
 </url>
+                 <url>
+  <loc>https://examseries.in/current-affairs/november-2025/daily-current-affairs-26-november-2025</loc>
+<lastmod>2025-11-27T20:30:00+05:30</lastmod>
+   <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
 <url>
   <loc>https://examseries.in/current-affairs/2025/current-affair-september-2025.html</loc>
 <lastmod>2025-11-06T16:31:00+05:30</lastmod>
@@ -815,3 +821,4 @@
   <priority>0.70</priority>
 </url>
 </urlset>
+
