@@ -333,6 +333,12 @@
            <changefreq>weekly</changefreq>
   <priority>0.70</priority>
 </url>
+      <url>
+  <loc>https://examseries.in/result/librarian-grade-iii-result-2025</loc>
+<lastmod>2025-12-03T00:25:00+05:30</lastmod>
+           <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
 <url>
   <loc>https://examseries.in/contact.html</loc>
 <lastmod>2025-10-12T23:26:00+05:30</lastmod>
@@ -862,4 +868,6 @@
   <changefreq>weekly</changefreq>
   <priority>0.70</priority>
 </url>
+      
 </urlset>
+
