@@ -2216,11 +2216,7 @@ Explanation: अभ्यास में आतंकवाद-रोधी औ
             <div class="sidebar-widget">
                 <h3 class="widget-title">📅 पिछले दिनों के करंट अफेयर्स</h3>
                 <ul id="date-list" class="date-list">
-			<li><a href="daily-current-affairs-4-december-2025"><span>📆</span> 4 दिसम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-3-december-2025"><span>📆</span> 3 दिसम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-2-december-2025"><span>📆</span> 2 दिसम्‍बर  2025</a></li>
-			<li><a href="daily-current-affairs-1-december-2025"><span>📆</span> 1 दिसम्‍बर  2025</a></li>
-			
+		
                 </ul>
             </div>
 <div class="sidebar">
@@ -2534,6 +2530,39 @@ Explanation: अभ्यास में आतंकवाद-रोधी औ
             });
         });
     </script>
+	<script>
+    window.onload = function() {
+        var ul = document.getElementById('date-list');
+        var currentYear = 2025; // Ya dynamically: new Date().getFullYear()
+        var monthName = "december"; // File naming me lowercase English month
+        var startDay = 1;
+        var endDay = 31;
 
+        for (let day = startDay; day <= endDay; day++) {
+            // Text to display in Hindi
+            let dateText = `${day} दिसम्‍बर ${currentYear}`;
+            // File name according to your convention
+            let fileName = `daily-current-affairs-${day}-${monthName}-${currentYear}.html`;
+
+            // Check if file exists
+            fetch(fileName)
+                .then(response => {
+                    if (response.ok) {
+                        // Create <li> and <a>
+                        let li = document.createElement('li');
+                        let a = document.createElement('a');
+                        a.href = fileName;
+                        a.innerHTML = `<span>📆</span> ${dateText}`;
+                        // Insert at the top of the list
+                        ul.insertBefore(li, ul.firstChild);
+                        li.appendChild(a);
+                    }
+                })
+                .catch(() => {
+                    // File missing, do nothing
+                });
+        }
+    };
+    </script>
 </body>
 </html>
