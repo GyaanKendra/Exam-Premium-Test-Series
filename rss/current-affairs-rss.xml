@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>Current Affairs</title>
+    <title>ExamSeries Latest Current Affairs</title>
     <link>https://examseries.in</link>
     <description>Latest Current Affairs Updates</description>
     <item>
-      <title>Daily Current Affairs 7 Dec 2025</title>
-      <link>https://examseries.in/current-affairs/7-dec-2025</link>
-      <pubDate>Sat, 07 Dec 2025 00:00:00 +0530</pubDate>
-      <description>Important events and news updates for 7th December 2025.</description>
+      <title>National Education Policy 2025 Launched</title>
+      <link>https://examseries.in/current-affairs/education-policy-2025</link>
+      <pubDate>Sat, 07 Dec 2025 12:00:00 +0530</pubDate>
     </item>
     <item>
-      <title>Another Current Affair</title>
-      <link>https://examseries.in/current-affairs/another-update</link>
-      <pubDate>Fri, 06 Dec 2025 00:00:00 +0530</pubDate>
-      <description>Other important events of the day.</description>
+      <title>India Successfully Launches New Satellite</title>
+      <link>https://examseries.in/current-affairs/india-satellite-launch</link>
+      <pubDate>Sat, 07 Dec 2025 10:00:00 +0530</pubDate>
     </item>
-    <!-- aur bhi items add kar sakte ho -->
+    <item>
+      <title>Rajasthan Govt Announces New Scholarship Scheme</title>
+      <link>https://examseries.in/current-affairs/rajasthan-scholarship</link>
+      <pubDate>Fri, 06 Dec 2025 18:00:00 +0530</pubDate>
+    </item>
   </channel>
 </rss>
