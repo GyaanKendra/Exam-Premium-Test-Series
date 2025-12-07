@@ -1,51 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>ExamSeries - Daily Current Affairs</title>
-    <link>https://examseries.in/current-affairs/</link>
-    <description>नवीनतम दैनिक करेंट अफेयर्स अपडेट्स। दिन-प्रतिदिन के महत्वपूर्ण समाचार, सरकारी योजनाएं और परीक्षाओं के लिए महत्वपूर्ण घटनाएं।</description>
-    <language>hi-IN</language>
-    <lastBuildDate>Sat, 07 Dec 2025 22:30:00 +0530</lastBuildDate>
-    <generator>ExamSeries RSS Premium 1.0</generator>
-
-    <!-- Example daily news item -->
+    <title>Current Affairs</title>
+    <link>https://examseries.in</link>
+    <description>Latest Current Affairs Updates</description>
     <item>
-      <title>15 दिसंबर 2025: महत्वपूर्ण राष्ट्रीय और अंतर्राष्ट्रीय घटनाएं</title>
-      <link>https://examseries.in/current-affairs/december-2025/daily-current-affairs-15-december-2025</link>
-      <description><![CDATA[
-        <strong>आज के करेंट अफेयर्स:</strong> 
-        <ul>
-          <li>भारत ने नई अंतरिक्ष योजना की घोषणा की।</li>
-          <li>अंतर्राष्ट्रीय बाजार में महत्वपूर्ण बदलाव।</li>
-          <li>सरकारी नीतियों में नए अपडेट्स जो परीक्षा के लिए महत्वपूर्ण हैं।</li>
-        </ul>
-        <p>पूरा विवरण और परीक्षा आधारित महत्वपूर्ण नोट्स पढ़ने के लिए <a href="https://examseries.in/current-affairs/december-2025/daily-current-affairs-15-december-2025">यहां क्लिक करें</a>.</p>
-      ]]></description>
-      <pubDate>Sat, 07 Dec 2025 06:00:00 +0530</pubDate>
-      <guid isPermaLink="true">https://examseries.in/current-affairs/december-2025/daily-current-affairs-15-december-2025</guid>
-      <category>National</category>
-      <category>International</category>
+      <title>Daily Current Affairs 7 Dec 2025</title>
+      <link>https://examseries.in/current-affairs/7-dec-2025</link>
+      <pubDate>Sat, 07 Dec 2025 00:00:00 +0530</pubDate>
+      <description>Important events and news updates for 7th December 2025.</description>
     </item>
-
-    <!-- Another item -->
     <item>
-      <title>14 दिसंबर 2025: शिक्षा और सरकारी योजनाओं के अपडेट</title>
-      <link>https://examseries.in/current-affairs/december-2025/daily-current-affairs-14-december-2025</link>
-      <description><![CDATA[
-        <strong>आज के प्रमुख अपडेट:</strong>
-        <ul>
-          <li>नई शिक्षा नीति में बदलाव।</li>
-          <li>सरकारी योजनाओं के नवीनतम अपडेट।</li>
-          <li>परीक्षाओं के लिए महत्वपूर्ण नोट्स।</li>
-        </ul>
-        <p>पूरा विवरण और महत्वपूर्ण पॉइंट्स के लिए <a href="https://examseries.in/current-affairs/december-2025/daily-current-affairs-14-december-2025">यहां क्लिक करें</a>.</p>
-      ]]></description>
-      <pubDate>Fri, 06 Dec 2025 06:00:00 +0530</pubDate>
-      <guid isPermaLink="true">https://examseries.in/current-affairs/december-2025/daily-current-affairs-14-december-2025</guid>
-      <category>Education</category>
-      <category>Government</category>
+      <title>Another Current Affair</title>
+      <link>https://examseries.in/current-affairs/another-update</link>
+      <pubDate>Fri, 06 Dec 2025 00:00:00 +0530</pubDate>
+      <description>Other important events of the day.</description>
     </item>
-
+    <!-- aur bhi items add kar sakte ho -->
   </channel>
 </rss>
-
