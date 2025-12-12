@@ -17,7 +17,7 @@
 </url>
       <url>
   <loc>https://examseries.in/current-affairs</loc>
-<lastmod>2025-12-10T23:54:00+05:30</lastmod>
+<lastmod>2025-12-12T22:30:00+05:30</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.60</priority>
 </url>
@@ -330,6 +330,12 @@
             <url>
   <loc>https://examseries.in/current-affairs/december-2025/daily-current-affairs-11-december-2025</loc>                                            
 <lastmod>2025-12-11T22:05:00+05:30</lastmod>
+   <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+               <url>
+  <loc>https://examseries.in/current-affairs/december-2025/daily-current-affairs-12-december-2025</loc>                                            
+<lastmod>2025-12-12T22:45:00+05:30</lastmod>
    <changefreq>weekly</changefreq>
   <priority>0.70</priority>
 </url>
@@ -946,6 +952,7 @@
 </url>
       
 </urlset>
+
 
 
 
