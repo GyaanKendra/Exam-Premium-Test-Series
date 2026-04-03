@@ -218,9 +218,9 @@
     
     /* Hero Section */
     .hero {
-      padding: 80px 0;
+      padding: 30px 0;
       text-align: center;
-      background: linear-gradient(135deg, rgba(74, 20, 140, 0.9), rgba(123, 31, 162, 0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center;
+      background: linear-gradient(135deg, rgba(74, 20, 140, 0.9), rgba(123, 31, 162, 0.9)), url('file:///C:/Users/abc/Downloads/exam.png') no-repeat center center;
       background-size: cover;
       position: relative;
       color: white;
@@ -241,7 +241,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
     
-    .hero h2 {
+    .hero h1 {
       font-size: 3.2rem;
       margin-bottom: 20px;
       font-weight: 800;
@@ -264,36 +264,11 @@
       flex-wrap: wrap;
     }
     
-    .stats-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 60px;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    
-    .stat-item {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      background: linear-gradient(to right, #ffd700, #ff8a00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .stat-label {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-    
+     
     /* Test Series Grid */
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       color: var(--primary);
       position: relative;
       padding-bottom: 18px;
@@ -305,10 +280,10 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
+      width: 200px;
       height: 4px;
       background: linear-gradient(to right, var(--accent), var(--primary));
-      border-radius: 2px;
+      border-radius: 5px;
     }
     
     .filters {
@@ -431,94 +406,11 @@
       margin-left: 8px;
     }
 
-/* Premium Notes Section */
-.notes-section {
-  padding: 80px 0;
-  background: #fff;
-  margin-bottom: 60px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-}
 
-.notes-heading {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--primary);
-  margin: 40px 0 25px;
-  border-left: 5px solid var(--accent);
-  padding-left: 10px;
-}
-
-.notes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.notes-card {
-  background: var(--off-white);
-  border-radius: 15px;
-  padding: 25px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: var(--shadow);
-}
-
-.notes-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-hover);
-  background: #fff;
-}
-
-.notes-icon {
-  width: 65px;
-  height: 65px;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 26px;
-  box-shadow: 0 6px 15px rgba(74, 20, 140, 0.25);
-}
-
-.notes-card h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--primary);
-}
-
-.notes-card p {
-  font-size: 14px;
-  color: var(--text-light);
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-
-.notes-btn {
-  display: inline-block;
-  padding: 6px 14px;
-  background: var(--accent);
-  color: white;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.notes-btn:hover {
-  background: #c2185b;
-}
-
-    
     
     /* FAQ Section */
     .faq {
-      padding: 80px 0;
+      padding: 40px 0;
       background: white;
       margin-bottom: 60px;
       border-radius: 20px;
@@ -775,102 +667,9 @@
         font-size: 28px;
       }
     }
-	  /* Upcoming Exams */
-        .upcoming-exams {
-            margin-top: 30px;
-        }
-        
-        .exam-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .exam-card {
-            background: var(--off-white);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--primary);
-        }
-        
-        .exam-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .exam-card h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .exam-card p {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .exam-card .btn {
-            width: 100%;
-            margin-top: 10px;
-        }
-        .view-all-container {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .view-all-btn {
-    background: #1a73e8;
-    color: #fff;
-    font-size: 1rem;
-    padding: 12px 28px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .view-all-btn:hover {
-    background: #0f5ccc;
-    transform: translateY(-2px);
-  }
+	 
   </style>
-	<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "ExamSeries",
-  "url": "https://examseries.in",
-  "logo": "https://examseries.in/image/examseries_logo_250.png",
-  "sameAs": [
-    "https://www.facebook.com/examseriesofficial/",
-    "https://t.me/exameseries"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-9950399752",
-    "contactType": "Customer Service",
-    "availableLanguage": ["en", "hi"]
-  }
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "ExamSeries",
-  "url": "https://examseries.in/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://examseries.in/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+	
 
 <script type="application/ld+json">
 {
@@ -954,83 +753,26 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h2>Best Online Test Series for Rajasthan Exams</h2>
-        <p>Access Rajasthan REET, Patwar, VDO, SI and India Level online test series designed by experts to help you crack competitive exams. Practice with detailed solutions, current affairs, and performance analytics for guaranteed success.</p>
+        <h1>Rajasthan Exams Online Test Series</h1>
+        <p>Access Online test series designed by experts to help you crack competitive exams and Practice with detailed solutions.</p>
         <div class="hero-buttons">
-
 			<a href="current-affairs" class="btn btn-primary" style="text-decoration: none; color: inherit;">
   <i class="fas fa-rocket"></i> Daily Current Affair
 </a>
-
          
           <button class="btn btn-outline" title="ExamSeries Free Test">
 			  <a href="/free-test-series/all-free-test-series.html" class="logo" style="text-decoration: none; color: inherit;">
-            <i class="fas fa-book-open"></i> Try Free Tests
+            <i class="fas fa-book-open"></i> Free Demo Test
           </button></a>
         </div>
-        
-        <div class="stats-container">
-          <div class="stat-item">
-            <div class="stat-number">5000+</div>
-            <div class="stat-label">Successful Students Love</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">100+</div>
-            <div class="stat-label">Test Series</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">92%</div>
-            <div class="stat-label">Success Rate</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Support</div>
-          </div>
-        </div>
-      </div>
+         </div>
     </div>
   </section>
-<section class="container">
-    <h2 class="section-title">All Exams Information </h2>
-                <div class="content-section">
-                    <p>वर्तमान में जारी सभी प्रतियोगी परीक्षाओं का Notification, Admit Card, Answer-Key यहां से देख सकते हैं : </p>
-                    
-                    <div class="exam-grid">
-                       <div class="exam-card">
-                            <h4>Patwar Exam 2025</h4>
-                            <p>Rajasthan Patwar Exam</p>
-                            <p><strong>आवेदन तिथि:</strong> 23 जून, 2025</p>
-                            <p><strong>परीक्षा तिथि:</strong> 29 जून, 2025</p>
-                           <button class="btn btn-primary" onclick="window.open('exams/rajasthan-exams/patwari/patwari-2025', '_blank')">   विस्तृत जानकारी</button>
-                        </div>                    
-                        
-                       <div class="exam-card">
-                            <h4>Rajasthan 4th Grade (Group D) 2025</h4>
-                            <p>Rajasthan Staff Selection Board (RSSB) Exam</p>
-                            <p><strong>आवेदन तिथि:</strong> 21 मार्च, 2025</p>
-                            <p><strong>परीक्षा तिथि:</strong> 19 सितम्‍बर, 2025</p>
-                           <button class="btn btn-primary" onclick="window.open('exams/rajasthan-exams/fourth-grade/rajasthan-fourth-grade-2025', '_blank')">   विस्तृत जानकारी</button>
-                        </div>
-                        <div class="exam-card">
-                            <h4>Rajasthan VDO 2025</h4>
-                            <p>Gram Vikas Adhikari Bharti</p>
-                            <p><strong>आवेदन तिथि:</strong> अप्रैल 2025</p>
-                            <p><strong>परीक्षा तिथि:</strong> 02 नवम्‍बर, 2025</p>
-                           <button class="btn btn-primary" onclick="window.open('exams/rajasthan-exams/vdo/rajasthan-vdo-2025', '_blank')">   विस्तृत जानकारी</button>
-                        </div>
-                    </div> </div>
-<!-- View All Button -->
-    <div class="view-all-container">
-     <p align="center"> <button class="btn view-all-btn" onclick="window.open('exams/rajasthan-exams', '_blank')">
-        सभी परीक्षाएँ देखें →
-      </button></h3></p>
-    </div></section></br></br>
 
 
   <!-- Test Series Section -->
-  <section class="container">
-    <h2 class="section-title">Our Premium Test Series</h2>
-	  
+  <section class="container"> 
+    <h2 class="section-title">ALL Test Series</h2>
     <div class="test-series-grid">
       <!-- Daily Current Affair Test Series -->
       <div class="test-series-card">
@@ -1230,73 +972,7 @@
     </div>
   </section>
 
- <!-- Premium Notes Section -->
-<section class="notes-section">
-  <div class="container">
-    <h2 class="section-title">📘 Rajasthan & Indian GK Notes for Competitive Exams</h2>
-    <p style="text-align:center; margin-bottom:40px; color:var(--text-light); font-size:1.1rem;">
-      Free & Premium <strong>study notes</strong> for <strong>Rajasthan GK</strong> and <strong>Indian GK</strong>. 
-      Well-structured, exam-focused, and perfect for <strong>RAS, Patwari, SSC, UPSC</strong> and other competitive exams.
-    </p>
-    
-    <!-- Rajasthan Notes -->
-    <h3 class="notes-heading">📍 Rajasthan GK Notes</h3>
-    <div class="notes-grid">
-      <div class="notes-card" onclick="window.location.href='rajasthan-history'">
-        <div class="notes-icon"><i class="fas fa-landmark"></i></div>
-        <h4>Rajasthan History Notes</h4>
-        <p>Important rulers, battles, freedom struggle & historical events of Rajasthan for exams.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-      
-      <div class="notes-card" onclick="window.location.href='/rajasthan-polity'">
-        <div class="notes-icon"><i class="fas fa-gavel"></i></div>
-        <h4>Rajasthan Polity Notes</h4>
-        <p>Complete polity of Rajasthan – governance, administration, constitution & local bodies.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-      
-      <div class="notes-card" onclick="window.location.href='/rajasthan-culture'">
-        <div class="notes-icon"><i class="fas fa-theater-masks"></i></div>
-        <h4>Rajasthan Culture Notes</h4>
-        <p>Art, festivals, fairs, folk dance, music & cultural heritage for Rajasthan exams.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-      
-      <div class="notes-card" onclick="window.location.href='/rajasthan-geography'">
-        <div class="notes-icon"><i class="fas fa-map-marked-alt"></i></div>
-        <h4>Rajasthan Geography Notes</h4>
-        <p>Climate, rivers, soil, natural resources & complete Rajasthan geography in simple form.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-    </div>
-    
-    <!-- Indian Notes -->
-    <h3 class="notes-heading">🌏 Indian GK Notes</h3>
-    <div class="notes-grid">
-      <div class="notes-card" onclick="window.location.href='/indian-history'">
-        <div class="notes-icon"><i class="fas fa-book"></i></div>
-        <h4>Indian History Notes</h4>
-        <p>Ancient, Medieval & Modern Indian history with exam-ready timelines & events.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-      
-      <div class="notes-card" onclick="window.location.href='/indian-polity/bharat-rajvyavastha-parichay.html'">
-        <div class="notes-icon"><i class="fas fa-university"></i></div>
-        <h4>Indian Polity Notes</h4>
-        <p>Indian Constitution, governance, rights, duties & political system in detail.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-      
-      <div class="notes-card" onclick="window.location.href='/indian-geography'">
-        <div class="notes-icon"><i class="fas fa-globe-asia"></i></div>
-        <h4>Indian Geography Notes</h4>
-        <p>India’s physical features, rivers, climate, natural resources & environment topics.</p>
-        <span class="notes-btn">Start Reading →</span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
   <!-- FAQ Section -->
@@ -1491,19 +1167,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
